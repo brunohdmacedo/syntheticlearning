@@ -1,7 +1,7 @@
 ---
 title: Gerando Dados Sintéticos para Machine Learning com Unity?
 date: 2021-05-02 17:27:15 +0200
-categories: ["machine learning", "computação gráfica", "visão computacional", "dados sintéticos", "IMPA"]
+categories: ["machine learning", "computação gráfica", "visão computacional", "dados sintéticos", "IMPA", "Unity"]
 background: /assets/triangle-pink.png
 permalink: /gerando-dados-sinteticos
 ---

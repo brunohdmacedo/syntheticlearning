@@ -3,7 +3,7 @@ remote_theme: peterdesmet/petridish@1.1
 # SITE SETTINGS
 title: Synthetic Learning Seminar       # Title in top navigation bar (navbar) and <head>
 description: Website for the Synthetic Learning Seminar at IMPA 2021
-author: Hallison Paz                    # Used for copyright statement in footer
+author: Hallison Paz & Luiz Velho                   # Used for copyright statement in footer
 # url: "https://peterdesmet.github.io"  # No slash at the end
 baseurl: "/syntheticlearning"                 # Only required if your site is on a subdomain e.g. https://username.github.io/sitename
                                         # which has url: "https://username.github.io" (no slash) and baseurl: "/sitename" (leading slash)
@@ -12,7 +12,7 @@ baseurl: "/syntheticlearning"                 # Only required if your site is on
 # SOCIAL PROFILES
 email: hallpaz@impa.br           # Social icon in footer
 twitter_username: visgraflab           # Social icon in footer
-github_username: hallpaz            # Social icon in footer
+github_username: visgraf            # Social icon in footer
 
 # THEME SETTINGS (ALL OPTIONAL)
 posts_on_home: 3                        # Show x number of latest posts on homepage, can be 0
