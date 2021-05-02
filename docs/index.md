@@ -1,113 +1,34 @@
-# Synthetic Learning
+---
+title: Aprendizado de Máquina com Dados Sintéticos
 
-ABSTRACT HERE
+---
 
-May 26th 2021 - What is synthetic learning and why does it matter?
-June 2nd 2021 - How to generate synthetic data and train a model?
-June 9th 2021 - Do they live in a simulation? Training models in dynamically synthetic environments
+O objetivo deste curso é estudar e avaliar formas de geração de dados sintéticos
+para treinamento de modelos de aprendizado de máquina capazes de resolver
+problemas nas áreas de visão computacional e computação gráfica. Buscamos
+compreender os pré-requisitos para um bom uso de dados sintéticos e a capacidade de
+generalização dos modelos treinados.
+O treinamento de modelos de aprendizado de máquinas para a resolução eficaz
+de tarefas geralmente requer uma quantidade muito grande de dados. Além da
+dificuldade de obtenção de um volume grande de dados, a necessidade de
+categorização dos dados, a existência de viés relativo a casos pouco frequentes no
+conjunto de treinamento e a crescente preocupação quanto à privacidade dos dados
+são desafios inerentes a este método. O uso de dados sintéticos para treinamento dos
+modelos pode ser uma solução para contornar estes problemas, pois em ambientes
+virtuais, pode-se controlar a quantidade de dados coletados, categorizá-los de maneira
+automatizada e controlar propriedades da cena tais como parâmetros das câmeras,
+aparência e pose dos objetos de interesse ou variação dos objetos de fundo.
+Este tipo de técnica, contudo, deve ser utilizada de forma criteriosa, de modo a
+garantir uma boa generalização dos modelos para aplicação em dados reais. Neste
+estudo, objetivamos entender mais a fundo as vantagens e limitações deste método em
+variados problemas, além de realizar experimentos com a plataforma Unity para
+treinamento de modelos para tarefas de detecção e reconhecimento de objetos.
 
-### What is it?
-– To use synthetically generated data for training machine learning models
-
-### What is machine learning?
-– techinique to solve problems in which we design a model capable of estimating a function from data to achieve a desired result.
-
-### Why use synthetic learning?
-– because we don't have enough data
-
-### DON'T HAVE ENOUGH DATA?
-
-* give an idea of amount of data we produce on the internet today*
-
-### BUT...
-
-* For many cases, data must be annotated (expensive)
-* Data ownership - privacy
-* NOT ENOUGH data - self driving cars
-* Dataset imbalacing - BIAS!
-* Data democratization - build solutions outside big corps (Google, Facebook)
-
-**Coded Bias?**
-
-### Use cases
-* Object detection and recognition
-* Pose estimation
-* Training Autonomous agents -  DIGITAL TWINS
- 
-- 
-### Beforehand Questions
-
-* How much realism do we need?
-* Do we even need real data?
-* How much effort to make it work well on real scenarios?
-* How about the effort to generate synthetic data?
-* Who is using it?
-
-### Technical Discussions
-
-#### Domain Randomization
-– Contextutal distractors: objetcs similar to possible real scene elementos, positioned randomly but coherently
-
-– Flying distractors: geometric shapes with random texture, size, and position
-
-* Differential Privacy
-
-### Challenges
-
-* Differences in camera hardware
-
-* Photorealistic data is still hard to generate (is it comparable to annotate??)
-
-### Tools
-
-– Unreal 
-– Mujoco http://www.mujoco.org
-
--------
-
-## A Study on the Impact of Domain Randomization for Monocular Deep 6DoF Pose Estimation
-
-"The main issue arises from the fact that filming those
-training sequences as well as **annotating** their ground truth
-is generally a cumbersome, expensive, and time-consuming
-task. Challenges include setting up and calibrating markers and
-cameras to properly capture the ground truth [9]–[11], as well
-as dealing with problems such as **camera noise, occlusions,
-and motion blur**. Moreover, **a wide array of viewpoints** and
-**rotation angles** must be covered, all while accounting for
-**background, foreground, and illumination details**. Even then,
-detection trained using those sequences might not work well
-with different cameras or environments."
-
-
-"It is worth noting that although these objects’ lack of
-texturization makes them very suitable for AR, it also makes 
-them more challenging, as they lack distinctive features and
-can vary widely in terms of color, size, and specularity."
-
-– linkar com dificuldades em simetria apresentada no vídeo do GTC
-
-
-"NVIDIA also published their Deep learning Dataset Synthe-sizer (NDDS) [30], a UE4 plugin that can generate synthetic
-data in real-time by randomizing illumination, objects, cam-eras, poses, textures, and distractors. The plugin can export
-images, segmentations, depth maps, object pose annotations,
-bounding boxes, keypoints, and custom stencils."
-
-
-"Hinterstoisser et al. [35] proposed a strategy that generates
-cluttered synthetic frames and trains a network to perform
-2D detection of complex objects. Though the scenes are clut-tered, the technique guarantees that the objects of interest are
-presented equally to the neural network in all scenarios. The
-model trained with only synthetic data outperformed the model
-trained with only real data. The authors also investigated
-individual aspects of the image generation pipeline, which
-revealed that blur and illumination color are the scene aspects
-that influence results the most."
-
-"The motivation being that photorealistic frames
-(such as the ones from the FAT dataset) are hard to generate
-and can be comparable in difficulty and time consumption to
-recording and annotating real data, depending on the challenge
-to be simulated. Thus, it is important to understand how the
-simpler way (domain randomization) alone can impact results."
-
+Um dos desafios para o treinamento eficaz de
+vários dos modelos de aprendizado de máquina é a necessidade de dados rotulados,
+que são categorizados por seres humanos, aumentando o custo de aquisição dos
+dados e a possibilidade de inserção de erros. Estudos recentes apontam para a
+possibilidade de uso de dados sintéticos para treinamento de modelos que possam
+apresentar um bom desempenho quando aplicado a dados reais. Neste estudo,
+buscaremos entender as vantagens e limitações deste método, bem como sua conexão
+com simulações virtuais.
