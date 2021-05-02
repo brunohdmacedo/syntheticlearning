@@ -12,14 +12,7 @@
           
           {% if page.date %}
           <p class="meta">
-            <time>
-                {% capture i18n_date %}
-                    {{ page.date | date: "%-d" }}
-                    {% assign m = page.date | date: "%-m" | minus: 1 %}
-                    {{ site.data.br.months[m] }}
-                    {{ page.date | date: "%Y" }}
-                {% endcapture %}
-            </time>
+            <time>{{ page.date }}</time>
             {% if page.author or page.authors %}
               &bull; {{ page.author | join: ', ' }}{{ page.authors | join: ', ' }}
             {% endif %}
