@@ -1,6 +1,9 @@
 ---
+layout: home
 title: Aprendizado de Máquina com Dados Sintéticos
-
+description: Seminário especial do Visgraf sobre geração de dados sintéticos para machine learning
+background: /assets/triangle-color-bg.jpg
+permalink: /
 ---
 
 O objetivo deste curso é estudar e avaliar formas de geração de dados sintéticos
