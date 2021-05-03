@@ -1,8 +1,8 @@
 ---
 title: Por que dados sintéticos?
 categories: ["machine learning", "computação gráfica", "visão computacional", "dados sintéticos", "IMPA"]
+date: 2021-05-26 17:00:15 +0200
 background: /assets/triangle-blue.png
-date: 26 de Maio de 2021
 permalink: /por-que-dados-sinteticos
 ---
 

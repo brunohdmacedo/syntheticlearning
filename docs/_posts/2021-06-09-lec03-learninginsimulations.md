@@ -1,8 +1,8 @@
 ---
 title: Eles vivem em uma simulação? Treinamento de modelos em ambientes sintéticos dinâmicos
+date: 2021-06-09 17:00:15 +0200
 categories: ["machine learning", "computação gráfica", "visão computacional", "dados sintéticos", "IMPA", "Unity", "Simulações 3D"]
 background: /assets/triangle-green.png
-date: 09 de Junho de 2021
 permalink: /aprendizado-em-simulacoes
 ---
 
