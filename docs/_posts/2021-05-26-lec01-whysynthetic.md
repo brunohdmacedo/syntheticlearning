@@ -3,6 +3,7 @@ title: Por que usar dados sintéticos?
 categories: ["machine learning", "computação gráfica", "visão computacional", "dados sintéticos", "IMPA"]
 date: 2021-05-26 17:00:15 +0200
 background: /assets/triangle-blue.png
+description: Neste seminário, vamos apresentar problemas que motivam o uso de dados sintéticos e discutir questões técnicas para o treinamento de modelos de aprendizado de máquina a partir de trabalhos recentes na área.
 permalink: /por-que-dados-sinteticos
 ---
 
