@@ -6,27 +6,8 @@ background: /assets/triangle-pink.png
 permalink: /gerando-dados-sinteticos
 ---
 
-Como gerar dados Que ferramentas utilizar? 
-Neste apresentação, veremos como gerar dados sintéticos utilizando uma plataforma de XXX e como treinar um modelo de aprendizado de máquina a partir desses dados.
+Qual o custo de se construir um conjuto de dados sintéticos? Que ferramentas podem ser utilizadas para este processo? Qual a complexidade de integrar ao treinamento dos modelos?
 
+Essas são apenas algumas das perguntas que você pode estar se fazendo se deseja saber mais sobre a geração de dados sintéticos para machine learning. Em se tratando de computação visual, plataformas de mídia como as *engines* Unreal e Unity e, mais recentemente, o NVidia Omniverse tem sido utilizadas como suporte para pesquisas e desenvolvimento de aplicações. Neste tipo de ambiente, podemos automatizar a construção de cenas com alto grau de controle de propriedades como aparência e pose dos objetos de interesse, parâmetros das câmeras ou variação dos objetos de fundo. Além disso, o controle sobre o tipo de dado gerado – imagens RGB, mapas de profundidade, máscaras de segmentação, nuvem de pontos etc – e o controle sobre a quantidade de dados gerados, permitindo um balanceamento dos exemplos entre categorias, são características importantes .
 
-Para além dessas questões técnicas, é importante termos em mente que dados são informações sensíveis, principalmente quando diretamente relacionados às pessoas. Assim, questões éticas e de privacidade 
-
-pois em ambientes
-virtuais, pode-se controlar a quantidade de dados coletados, categorizá-los de maneira
-automatizada e controlar propriedades da cena tais como parâmetros das câmeras,
-aparência e pose dos objetos de interesse ou variação dos objetos de fundo.
-Este tipo de técnica, contudo, deve ser utilizada de forma criteriosa, de modo a
-garantir uma boa generalização dos modelos para aplicação em dados reais. Neste
-estudo, objetivamos entender mais a fundo as vantagens e limitações deste método em
-variados problemas, além de realizar experimentos com a plataforma Unity para
-treinamento de modelos para tarefas de detecção e reconhecimento de objetos.
-
-Um dos desafios para o treinamento eficaz de
-vários dos modelos de aprendizado de máquina é a necessidade de dados rotulados,
-que são categorizados por seres humanos, aumentando o custo de aquisição dos
-dados e a possibilidade de inserção de erros. Estudos recentes apontam para a
-possibilidade de uso de dados sintéticos para treinamento de modelos que possam
-apresentar um bom desempenho quando aplicado a dados reais. Neste estudo,
-buscaremos entender as vantagens e limitações deste método, bem como sua conexão
-com simulações virtuais.
+Nesta apresentação, veremos como é possível realizar experimentos com a plataforma Unity para geração de dados sintéticos que podem ser utilizados no treinamento de modelos para tarefas como detecção e reconhecimento de objetos ou estimativa de pose. A partir da discussão iniciada no [primeiro seminário](/por-que-dados-sinteticos), verificaremos como podemos obter imagens rotuladas automaticamente e também realizar operações de aleatorização de domínio (*domain randomization*).
