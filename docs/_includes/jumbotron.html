@@ -16,7 +16,7 @@
             <!-- {% capture i18n_date %} -->
                 {{ page.date | date: "%-d" }}
                 {% assign m = page.date | date: "%-m" | minus: 1 %}
-                {{ site.data.fr.months[m] }}
+                {{ site.data.br.months[m] }}
                 {{ page.date | date: "%Y" }}
             <!-- {% endcapture %} -->
             {% if page.author or page.authors %}
