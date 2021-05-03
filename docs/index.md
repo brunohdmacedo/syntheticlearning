@@ -1,37 +1,13 @@
 ---
 layout: home
 title: Aprendizado de Máquina com Dados Sintéticos
-description: Seminário especial do Visgraf sobre geração de dados sintéticos para machine learning
+description: Seminário especial do Visgraf
 background: /assets/triangle-color-bg.jpg
 permalink: /
 ---
 
-O objetivo deste curso é estudar e avaliar formas de geração de dados sintéticos
-para treinamento de modelos de aprendizado de máquina capazes de resolver
-problemas nas áreas de visão computacional e computação gráfica. Buscamos
-compreender os pré-requisitos para um bom uso de dados sintéticos e a capacidade de
-generalização dos modelos treinados.
 O treinamento de modelos de aprendizado de máquinas para a resolução eficaz
-de tarefas geralmente requer uma quantidade muito grande de dados. Além da
-dificuldade de obtenção de um volume grande de dados, a necessidade de
-categorização dos dados, a existência de viés relativo a casos pouco frequentes no
-conjunto de treinamento e a crescente preocupação quanto à privacidade dos dados
-são desafios inerentes a este método. O uso de dados sintéticos para treinamento dos
-modelos pode ser uma solução para contornar estes problemas, pois em ambientes
-virtuais, pode-se controlar a quantidade de dados coletados, categorizá-los de maneira
-automatizada e controlar propriedades da cena tais como parâmetros das câmeras,
-aparência e pose dos objetos de interesse ou variação dos objetos de fundo.
-Este tipo de técnica, contudo, deve ser utilizada de forma criteriosa, de modo a
-garantir uma boa generalização dos modelos para aplicação em dados reais. Neste
-estudo, objetivamos entender mais a fundo as vantagens e limitações deste método em
-variados problemas, além de realizar experimentos com a plataforma Unity para
-treinamento de modelos para tarefas de detecção e reconhecimento de objetos.
+de tarefas geralmente requer uma quantidade muito grande de dados. Apesar de gerarmos milhões de terabytes de dados todos os dias, *não há dados suficientes* para atender com precisão a diversos problemas. Coletar e organizar grandes volumes de dados para cada tipo de aplicação já seria um desafio considerável para muitos indivíduos e organizações. No entanto, seja por questões técnicas ou éticas, para conduzir pesquisas e criar aplicações de inteligência artificial, é preciso ter cuidados adicionais na construção desses conjuntos de dados, tais como a categorização e balaceamento dos exemplos e o respeito à privacidade das pessoas.
 
-Um dos desafios para o treinamento eficaz de
-vários dos modelos de aprendizado de máquina é a necessidade de dados rotulados,
-que são categorizados por seres humanos, aumentando o custo de aquisição dos
-dados e a possibilidade de inserção de erros. Estudos recentes apontam para a
-possibilidade de uso de dados sintéticos para treinamento de modelos que possam
-apresentar um bom desempenho quando aplicado a dados reais. Neste estudo,
-buscaremos entender as vantagens e limitações deste método, bem como sua conexão
-com simulações virtuais.
+
+O uso de dados sintéticos para treinamento dos modelos pode ser uma solução para contornar vários dos problemas relacionados construção de conjuntos de dados. Estudos recentes apontam para a possibilidade de uso de dados sintéticos para treinamento de modelos que possam apresentar um bom desempenho quando aplicado a dados reais. Nesta série de três seminários, apresentaremos vantagens e limitações deste método, como dados sintéticos podem ser gerados em larga escala com as ferramentas de computação gráfica disponíveis hoje em dia e como essa ideia se expande para o aprendizado de máquina dentro de simulações.

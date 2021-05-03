@@ -18,6 +18,7 @@ Além do custo da tarefa, em si, ainda há a possibilidade de inserção de erro
 
 Para além dessas questões técnicas, é importante termos em mente que dados são informações sensíveis, principalmente quando diretamente relacionados às pessoas. Assim, questões éticas e de privacidade 
 
+Dados3d
 
 
 Por exemplo, se quisermos treinar um modelo para 

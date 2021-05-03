@@ -6,7 +6,21 @@ background: /assets/triangle-green.png
 permalink: /aprendizado-em-simulacoes
 ---
 
+Nesta apresentação, veremos que as aplicações de  dados sintéticos não se limitam a situações estáticas. É possível construir replicar digitais de ambientes, processos e até mesmo agentes para gerar simulações virtuais e coletar dados para treinamento de modelos. Um cômodo, uma fábrica e até mesmo uma cidade podem ser simulados virtualmente. Em particular, o treinamento de agentes inteligentes como robôs e veículos autônomos pode ser acelerado enormente com o uso de dados sintéticos dinâmicos. 
+
+que sejam simulações completas de um determinado ambiente. Agentes inteligentes completamente digitais também: humanos virtuais, assistentes etc
+
+abre a possibilidade para coletar novos dados que seriam muito difíceis de se obter na dimensão física do nosso mundo.
+
+Assim como 
 Treinamento de agentes inteligentes.
+
+
+
+Este ano, durante a GPU Technology Conference, conferência anual da Nvidia, foi possível perceber o quanto algumas empresas e instituições estão investindo na construção de *Digital Twins*, réplicas digitais de ambientes, processos e até mesmo agentes para que seja possível realizar estudos e treinamentos de modelos.
+
+Será que vivemos em uma simulação?
+
 
 – Robôs
 Nvidia GTC-21
@@ -18,12 +32,3 @@ EUA treinando aviões, navios...
 Empatia?
 
 Humanos digitais
-
-
-Check out the [Jekyll docs][Hinterstoisser-2019]
-
-1. Hinterstoisser, S., Pauly, O., Heibel, H., Marek, M., & Bokeloh, M. (2019). An Annotation Saved is an Annotation Earned: Using Fully Synthetic Training for Object Instance Detection.
-
-[Hinterstoisser-2019]: https://arxiv.org/abs/1902.09967
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
