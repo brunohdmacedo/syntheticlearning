@@ -1,49 +1,17 @@
 ---
-title: Por que dados sintéticos?
+title: Por que usar dados sintéticos?
 categories: ["machine learning", "computação gráfica", "visão computacional", "dados sintéticos", "IMPA"]
 date: 2021-05-26 17:00:15 +0200
 background: /assets/triangle-blue.png
 permalink: /por-que-dados-sinteticos
 ---
 
-Aprendizado supervisionado.
+Como as máquinas aprendem? Esta é uma pergunta que talvez não admita uma resposta simples. No entanto, podemos reformulá-la para analisar alguns casos. 
 
-Muito do avanço que vemos em pesquisas e aplicações envolvendo inteligência artificial hoje em dia, deve-se à técnica de treinamento de modelos a partir de de dados - aprendizado de máquina.
+A forma mais comum de treinar modelos de aprendizado de máquina hoje em dia é o *aprendizado supervisionado*. Nesta abordagem, usamos dados rotulados para aprender um modelo, uma função que respeita determinadas hipóteses. Conhecemos os valores de entrada (os dados) e os valores de saída (os rótulos) desta função e, com isso, podemos ajustar os parâmetros do nosso modelo, justamente por saber quando ele está acertando e quando ele está errando. Este cenário nos leva a uma das primeiras dificuldades em se construir conjuntos de dados: 
 
-Uma forma bastante popular de treinamento de modelos de aprendizado de máquina é o aprendizado supervisionado. Nesta abordagem, usamos os
+> "Como conseguir os rótulos corretos dos dados?"
 
-Podemos ajustar os parâmetros do nosso modelo, justamente por saber quando ele está acertando e quando está errando, visto que possuímos dados rotulados para treinar e validar o modelo. O custo de aquisição dos dados, no entanto, é muito alto, pois para cada exemplo, é necessário que um ser humano avalie o seu conteúdo e anote o que está presente de acordo com o objetivo do problema.
+Pensando em um exemplo clássico de visão computacional, se quisermos construir um modelo para diferenciar entre cadeiras e sofás, como conseguimos imagens cujo conteúdo sabemos que são cadeiras ou sofás? Para rotular os dados, precisamos que um ser humano avalie cada exemplo e anote o que está presente de acordo com o objetivo do problema. Além de aumentar o custo de aquisição dos dados, esta componente humana em um processo tão repetitivo aumenta a probabilidade de inserção de erros no processo. Este é um exemplo de situação que motiva o uso de dados, pois tendo o controle da geração dos dados, podemos ter os rótulos de cada exemplo automaticamente.
 
-Além do custo da tarefa, em si, ainda há a possibilidade de inserção de erros e a dificuldade em ter algumas anotações com alta precisão. 
-
-Para além dessas questões técnicas, é importante termos em mente que dados são informações sensíveis, principalmente quando diretamente relacionados às pessoas. Assim, questões éticas e de privacidade 
-
-Dados3d
-
-
-Por exemplo, se quisermos treinar um modelo para 
-
-
-
-Privacidade?
-
-Para treinar modelos Precisamos de uma grande quantidade de dados rotulados, isto é, dados cuja categoria seja conhecida. 
-
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][Hinterstoisser-2019]
-
-1. Hinterstoisser, S., Pauly, O., Heibel, H., Marek, M., & Bokeloh, M. (2019). An Annotation Saved is an Annotation Earned: Using Fully Synthetic Training for Object Instance Detection.
-
-[Hinterstoisser-2019]: https://arxiv.org/abs/1902.09967
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Ao adotar este paradigma, no entanto, algumas questões precisam ser respondidas, por exemplo: é preciso que as imagens sejam fotorrealistas? Ainda precisamos de dados reais no treinamento? Como aumentar as chances de um modelo treinado com dados sintéticos funcionar bem em dados reais? Neste seminário, vamos apresentar problemas que motivam o uso de dados sintéticos e discutir questões técnicas para o treinamento de modelos de aprendizado de máquina a partir de trabalhos recentes na área. Com essa introdução, buscamos compreender os pré-requisitos para um bom uso de dados sintéticos e a capacidade de generalização dos modelos treinados.

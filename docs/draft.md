@@ -114,3 +114,20 @@ and can be comparable in difficulty and time consumption to
 recording and annotating real data, depending on the challenge
 to be simulated. Thus, it is important to understand how the
 simpler way (domain randomization) alone can impact results."
+
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+Check out the [Jekyll docs][Hinterstoisser-2019]
+
+1. Hinterstoisser, S., Pauly, O., Heibel, H., Marek, M., & Bokeloh, M. (2019). An Annotation Saved is an Annotation Earned: Using Fully Synthetic Training for Object Instance Detection.
+
+[Hinterstoisser-2019]: https://arxiv.org/abs/1902.09967
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/

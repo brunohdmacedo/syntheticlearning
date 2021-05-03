@@ -6,43 +6,27 @@ background: /assets/triangle-pink.png
 permalink: /gerando-dados-sinteticos
 ---
 
-Aprendizado supervisionado.
+Como gerar dados Que ferramentas utilizar? 
+Neste apresentação, veremos como gerar dados sintéticos utilizando uma plataforma de XXX e como treinar um modelo de aprendizado de máquina a partir desses dados.
 
-Muito do avanço que vemos em pesquisas e aplicações envolvendo inteligência artificial hoje em dia, deve-se à técnica de treinamento de modelos a partir de de dados - aprendizado de máquina.
-
-Uma forma bastante popular de treinamento de modelos de aprendizado de máquina é o aprendizado supervisionado. Nesta abordagem, usamos os
-
-Podemos ajustar os parâmetros do nosso modelo, justamente por saber quando ele está acertando e quando está errando, visto que possuímos dados rotulados para treinar e validar o modelo. O custo de aquisição dos dados, no entanto, é muito alto, pois para cada exemplo, é necessário que um ser humano avalie o seu conteúdo e anote o que está presente de acordo com o objetivo do problema.
-
-Além do custo da tarefa, em si, ainda há a possibilidade de inserção de erros e a dificuldade em ter algumas anotações com alta precisão. 
 
 Para além dessas questões técnicas, é importante termos em mente que dados são informações sensíveis, principalmente quando diretamente relacionados às pessoas. Assim, questões éticas e de privacidade 
 
+pois em ambientes
+virtuais, pode-se controlar a quantidade de dados coletados, categorizá-los de maneira
+automatizada e controlar propriedades da cena tais como parâmetros das câmeras,
+aparência e pose dos objetos de interesse ou variação dos objetos de fundo.
+Este tipo de técnica, contudo, deve ser utilizada de forma criteriosa, de modo a
+garantir uma boa generalização dos modelos para aplicação em dados reais. Neste
+estudo, objetivamos entender mais a fundo as vantagens e limitações deste método em
+variados problemas, além de realizar experimentos com a plataforma Unity para
+treinamento de modelos para tarefas de detecção e reconhecimento de objetos.
 
-
-Por exemplo, se quisermos treinar um modelo para 
-
-
-
-Privacidade?
-
-Para treinar modelos Precisamos de uma grande quantidade de dados rotulados, isto é, dados cuja categoria seja conhecida. 
-
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][Hinterstoisser-2019]
-
-1. Hinterstoisser, S., Pauly, O., Heibel, H., Marek, M., & Bokeloh, M. (2019). An Annotation Saved is an Annotation Earned: Using Fully Synthetic Training for Object Instance Detection.
-
-[Hinterstoisser-2019]: https://arxiv.org/abs/1902.09967
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Um dos desafios para o treinamento eficaz de
+vários dos modelos de aprendizado de máquina é a necessidade de dados rotulados,
+que são categorizados por seres humanos, aumentando o custo de aquisição dos
+dados e a possibilidade de inserção de erros. Estudos recentes apontam para a
+possibilidade de uso de dados sintéticos para treinamento de modelos que possam
+apresentar um bom desempenho quando aplicado a dados reais. Neste estudo,
+buscaremos entender as vantagens e limitações deste método, bem como sua conexão
+com simulações virtuais.
