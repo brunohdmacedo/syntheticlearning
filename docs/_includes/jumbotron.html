@@ -16,6 +16,7 @@
             <time>
                 {% assign m = page.date | date: "%-m" %}
                 {{ page.date | date: "%-d" }}
+                de 
                 {% case m %}
                 {% when '1' %}Janeiro
                 {% when '2' %}Fevereiro
@@ -30,6 +31,7 @@
                 {% when '11' %}Novembro
                 {% when '12' %}Dezembro
                 {% endcase %}
+                 de
                 {{ page.date | date: "%Y" }}
             </time>
             {% if page.author or page.authors %}

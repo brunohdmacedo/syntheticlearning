@@ -6,7 +6,9 @@ background: /assets/triangle-blue.png
 permalink: /por-que-dados-sinteticos
 ---
 
-Como as máquinas aprendem? Esta é uma pergunta que talvez não admita uma resposta simples. No entanto, podemos reformulá-la para analisar alguns casos. 
+### Como as máquinas aprendem?
+
+*Esta é uma pergunta que talvez não admita uma resposta simples. No entanto, sem adentrar questões filosóficas, podemos analisar alguns casos. *
 
 A forma mais comum de treinar modelos de aprendizado de máquina hoje em dia é o *aprendizado supervisionado*. Nesta abordagem, usamos dados rotulados para aprender um modelo, uma função que respeita determinadas hipóteses. Conhecemos os valores de entrada (os dados) e os valores de saída (os rótulos) desta função e, com isso, podemos ajustar os parâmetros do nosso modelo, justamente por saber quando ele está acertando e quando ele está errando. Este cenário nos leva a uma das primeiras dificuldades em se construir conjuntos de dados: 
 

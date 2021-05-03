@@ -6,7 +6,7 @@ background: /assets/triangle-pink.png
 permalink: /gerando-dados-sinteticos
 ---
 
-Qual o custo de se construir um conjuto de dados sintéticos? Que ferramentas podem ser utilizadas para este processo? Qual a complexidade de integrar ao treinamento dos modelos?
+### Qual o custo de se construir um conjuto de dados sintéticos? Que ferramentas podem ser utilizadas para este processo? Qual a complexidade de integrar ao treinamento dos modelos?
 
 Essas são apenas algumas das perguntas que você pode estar se fazendo se deseja saber mais sobre a geração de dados sintéticos para machine learning. Em se tratando de computação visual, plataformas de mídia como as *engines* Unreal e Unity e, mais recentemente, o NVidia Omniverse tem sido utilizadas como suporte para pesquisas e desenvolvimento de aplicações. Neste tipo de ambiente, podemos automatizar a construção de cenas com alto grau de controle de propriedades como aparência e pose dos objetos de interesse, parâmetros das câmeras ou variação dos objetos de fundo. Além disso, o controle sobre o tipo de dado gerado – imagens RGB, mapas de profundidade, máscaras de segmentação, nuvem de pontos etc – e o controle sobre a quantidade de dados gerados, permitindo um balanceamento dos exemplos entre categorias, são características importantes .
 

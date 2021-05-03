@@ -6,29 +6,13 @@ background: /assets/triangle-green.png
 permalink: /aprendizado-em-simulacoes
 ---
 
-Nesta apresentação, veremos que as aplicações de  dados sintéticos não se limitam a situações estáticas. É possível construir replicar digitais de ambientes, processos e até mesmo agentes para gerar simulações virtuais e coletar dados para treinamento de modelos. Um cômodo, uma fábrica e até mesmo uma cidade podem ser simulados virtualmente. Em particular, o treinamento de agentes inteligentes como robôs e veículos autônomos pode ser acelerado enormente com o uso de dados sintéticos dinâmicos. 
+### Será que vivemos em uma simulação?
 
-que sejam simulações completas de um determinado ambiente. Agentes inteligentes completamente digitais também: humanos virtuais, assistentes etc
+Simulações computacionais são recursos bastante usados e consolidados como forma de realizar estimativas e predições de processos difíceis e custosos de se investigar diretamente. No entanto, simulações podem ser combinadas com técnicas de aprendizado de máquina como aprendizado por reforço (*reinforcement learning*). Nesta terceira e última apresentação, veremos que as aplicações de dados sintéticos não se limitam a situações estáticas.
 
-abre a possibilidade para coletar novos dados que seriam muito difíceis de se obter na dimensão física do nosso mundo.
+Um cômodo, uma fábrica e até mesmo uma cidade podem ser simulados virtualmente com o objetivo de se estabelecer alguma relação com os seus correspondentes físicos, um conceito conhecido como *Digital Twin*. A título de ilustração, em abril deste ano, durante a abertura da *GPU Technology Conference* (GTC), conferência anual da Nvidia, houve um trecho dedicado a comentar como a BMW, fabricante de veículos, vem simulando uma de suas fábricas para melhorar o planejamento do processo de produção e **treinar robôs para realizar tarefas**.
 
-Assim como 
-Treinamento de agentes inteligentes.
-
+ Além de prover controle sobre os dados, as simulações são ambientes em que o treinamento de agentes inteligentes como robôs e veículos autônomos pode ser conduzido em segurança e em ritmo mais acelerado que o da vida real. Qual será a próxima fronteira?
 
 
-Este ano, durante a GPU Technology Conference, conferência anual da Nvidia, foi possível perceber o quanto algumas empresas e instituições estão investindo na construção de *Digital Twins*, réplicas digitais de ambientes, processos e até mesmo agentes para que seja possível realizar estudos e treinamentos de modelos.
-
-Será que vivemos em uma simulação?
-
-
-– Robôs
-Nvidia GTC-21
-
-– Veículos autônomos
-EUA treinando aviões, navios...
-
-- Animais? Pessoas?
-Empatia?
-
-Humanos digitais
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JBB6DmuidCA?start=786" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
