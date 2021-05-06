@@ -1,8 +1,8 @@
 remote_theme: peterdesmet/petridish@1.1
 
 # SITE SETTINGS
-title: Synthetic Data for Machine Learning Seminar       # Title in top navigation bar (navbar) and <head>
-description: Website of the Synthetic Data for Learning Seminar at IMPA 2021
+title: Synthetic Data Generation for Machine Learning       # Title in top navigation bar (navbar) and <head>
+description: Website of the Synthetic Data Generation for Machine Learning lecture series at IMPA 2021
 author: Hallison Paz & Luiz Velho                   # Used for copyright statement in footer
 # url: "https://peterdesmet.github.io"  # No slash at the end
 baseurl: "/syntheticlearning"                 # Only required if your site is on a subdomain e.g. https://username.github.io/sitename
