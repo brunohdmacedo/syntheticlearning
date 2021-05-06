@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Aprendizado de Máquina com Dados Sintéticos
+title: Geração de Dados Sintéticos para Aprendizado de Máquina
 description: Seminário especial do Visgraf
 background: /assets/triangle-color-bg.jpg
 permalink: /
