@@ -10,3 +10,5 @@ O treinamento de modelos de aprendizado de máquinas para a resolução eficaz d
 
 
 O uso de dados sintéticos para treinamento dos modelos pode ser uma solução para contornar vários dos problemas relacionados construção de conjuntos de dados. Estudos recentes apontam para a possibilidade de uso de dados sintéticos para treinamento de modelos que possam apresentar um bom desempenho quando aplicado a dados reais. Nesta série de três seminários, apresentaremos vantagens e limitações deste método, em particular, nas áreas de visão computacional e computação gráfica; como dados sintéticos podem ser gerados em larga escala com as ferramentas de computação gráfica disponíveis hoje em dia; e como essa ideia se expande para o aprendizado de máquina dentro de simulações.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TJkyhV_Mfcw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
