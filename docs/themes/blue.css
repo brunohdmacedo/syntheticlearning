@@ -1,0 +1,25 @@
+/* @theme blue */
+
+@import "default";
+
+section h1 {
+    color: #004D80;
+}
+
+section h5 {
+    color: #5E5E5E;
+}
+
+section.invert {
+    background-color: #003462;
+}
+
+section.topic {
+    background-color: #003462;
+}
+
+section.topic h1 {
+    text-align: center;
+    color: white;
+    font-size: 120px;
+}

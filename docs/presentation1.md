@@ -1,18 +1,30 @@
 ---
-color: white
-draft: true
+
 marp: true
+inlineSVG: true
+theme: blue
+draft: true
+
 ---
-<!-- backgroundColor: #003462 -->
+<!-- _color: white -->
+![bg](img/visgraf-background.jpeg)
+
 # Why Does Synthetic Data Matter? 
 
-### [Generation of synthetic data for machine learning]()
+### Generation of synthetic data for machine learning
 
 <br/>
 
 ### Hallison Paz
 
 ---
+<!-- _class: invert -->
+![bg 50%](img/visgraf_completo_white.png)
+
+
+---
+<!-- _footer: [visgraf.github.io/syntheticlearning/](https://visgraf.github.io/syntheticlearning/) -->
+
 # Generation of synthetic data for machine learning
 
 ### 1. Why does synthetic data matter?
@@ -20,135 +32,188 @@ marp: true
 ### 3. Do they live in a simulation? Training models for dynamic environments
 
 ---
+<!-- _class: topic -->
 
+# Context
+
+---
 <!-- paginate: true -->
 # Context
 
-* Machine learning has enabled a lot of nice stuff
+#### Machine learning has improved performance on a lot of computer vision tasks
 
-Examples:
+<!-- Computer vision -->
+
+##### Examples:
 – Object Detection
 – Classification
-– Instace segmentation
-– Semantic segmentation
-– Autonomous vehicles
+– Instance segmentation
+
+![bg right:40%](img/objdetection.jpg)
+
+---
+# Context
+
+#### Machine learning also enabled new applications
+
+- Style transfer
+- Deep Fakes
+- Autonomous vehicles
+
+---
+
+# Context
+
+### The last few years: AI Graphics
+
+– Scene semantic segmentation
+– View Synthesis
 – Object reconstruction
-– Deep Fake
+– Materials etc
 
-<!-- pictures to illustrate --->
----
 
-# What do we need?
-
-* Computational power / storage
-* Methods
-* **Data** a lot of data
+![bg height: 60% right:30%](img/rasterizer-reconstruct.gif)
 
 ---
+# Requirements
+
+### – Computational power / storage
+
+### – Methods
+
+### – Data a lot of data 
+
+---
+<!-- _class: topic --->
 
 # THERE'S NOT ENOUGHT DATA
 
 ---
-
-### This is an issue for applications of ML in all areas. However, in this lecture series, we'll focus on computer graphics and vision problems
-
-many applications require labeling which is expensive or impossible to do by hand, other applications have a wide underlying data distribution that real datasets do not or cannot fully cover, yet other applications may benefit from additional modalities unavailable in real datasets, and so on.
-
----
-
 # We need labeled data
 
-* Most of these applications are trained using supervised learning
+### Most of these applications are trained using supervised learning
 
-<!--Yan Lecunn Self supervised learning lecture GTC-21-->
-Research:
-* Create new **methods** to train machine learning models using less **computational power** and less **data**.
+$$ f(x) = y $$
 
-* Illustrate f(x) = y
+![bg right:55%](img/baleia.jpg)
+![bg bottom:40%](img/submarino.jpg)
+
+<!-- _footer: More at: [youtu.be/TJkyhV_Mfcw](https://youtu.be/TJkyhV_Mfcw) -->
+---
+
+# HOW DO WE LABEL DATA?
+
+![bg left:50%](img/rgb_11.png)
 
 ---
 
 # How do we label data?
 
-**Annotation Process**
-* Human labels data
-  * expensive: you must pay someone to do it
-  * error prone: repetitive task and sometimes it can be hard for human to annotate (illustration instace segmentation, 6DoF estimation)
-  * You must validate (check if it is correct)
+**Annotation Process: humans label data**
+
+* Expensive: cost money and time
+* Error prone: 
+  * repetitive task 
+  * sometimes it can be very hard
+
+![bg right:45%](img/segmentation_11.png)
 
 ---
-# Bias
+# How do we label data?
+
+**Annotation Process: humans label data**
+
+* Expensive: cost money and time
+* Error prone: 
+  * repetitive task 
+  * sometimes it can be very hard
+* You must validate
+
+![bg right:38%](img/6dof.png)
+
+---
+# BIAS
 
 <!-- Give some dimension on the amount of data used to train something -->
-* We need a lot of data 
-* We also need to have a good balance between
-https://www.theverge.com/21298762/face-depixelizer-ai-machine-learning-tool-pulse-stylegan-obama-bias
+### – We need a lot of data 
+### – We also need to have a good **balance** between
 
-CODED BIAS
+![bg right:32%](img/codebias.jpg)
+
+<!-- _footer: What a [machine learning tool that turns Obama white](https://www.theverge.com/21298762/face-depixelizer-ai-machine-learning-tool-pulse-stylegan-obama-bias) can (and can’t) tell us about AI bias -->
 
 ---
 
 # BIAS
 
-* "Rare" cases
-– Self driving car: snowing, rainning etc
+* Simulate less frequent cases:
+  *  Weather, 
+  *  Illumination
+  *  Shape
+  *  Pose
+  *  etc
 
 ---
 
 # Copyright
 
-* Web scrapping
-* ImageNet
+![bg width:30%  opacity:.07](img/copyright.png)
 
 ---
 
 # Privacy
 
 * Data might be related to people
-* FaceApp e similares
-* Do dilema das redes a PRIVACIDADE HACKEADA
+* Might have enormous consequences
+* Regulations
+
+![bg right:40%](img/greathack.jpg)
 
 ---
 
-# Summarizing issues (Why creating large scale databases is hard?)
+# Creating large scale databases is hard
 
-### Technical
+## Technical
 * Need to annotate data
 * Must have sufficent examples for each class
-* Must guarantee class balance (BIAS)
-  * These requirements might be hard. Rare cases.
+* Must guarantee class balance
+  
 ## Ethical
 * Copyright issues
 * Privacy concerns
 
 ---
+<!-- _class: topic -->
+
+# Synthetic Data Matters!
+
+---
+# Before we dive in...
+
+##### Some approaches to the data problem
+### – Unsupervised / Self-supervised$^1$ learning
+### – Data augmentation
+### – Synthetic datasets
+
+<!-- _footer: $^1$ You may be interested in check Yan Lecunn's presentation on Nvidia GTC-21-->
+---
 
 # Data augmentation
 
-* Limited - WHY?
+## Real data transformations that don't change the target label
+* Flip, rotate, resize, scale...
 
-"A related idea is to generate synthetic data from real data by learning to trans- form real data with conditional GANs. This could either simply serve as “smart augmentation” to extend the dataset or, more interestingly, could “fill in the holes” in the data distribution, obtaining synthetic data for situations that are lacking in the original dataset"
+## There are studies on generative methods for data augmentation $^2$
+* Could it make the data distribution larger?
 
-- Refer to section 5.3 and 5.4 (GAN's) of survey
 
-
-"As we discussed in Section 1, data augmentation differs from synthetic data in
-that it modifies real data rather than creates new; the modifications are usually
-done with predefined transformation functions (TFs) that do not change the
-target labels."
+<!-- _footer: Refer to sections 5.3 and 5.4 of the survey Nikolenko, Sergey; [Synthetic Data for Deep learning](https://arxiv.org/abs/1909.11512); 2019. -->
 
 ---
+<!-- _class: topic -->
+<!-- _paginate: false -->
 
-# Generate new data from the dataset GANs
-
-* You are sampling the same distribution
-
----
-
-# Synthetic ambiente, synthetic world, synthtetic data
-
-* Build 3D digital scenes to produce data
-
+# Synthetic datasets
 
 ---
 
@@ -156,209 +221,458 @@ target labels."
 
 * Automatic annotation
 * Control over the amount of examples and class balancing
-* 
-* Protect privacy
-* Copyright?
+* Don't need to be related to real people (privacy)
+* Copyright
 
-* Data democratization - build solutions outside big corps (Google, Facebook)
+* **Data democratization**
 
 ---
 
 # AI Graphics
 
-Bridge between computer vision and computer graphics
+* Bridge between computer vision and computer graphics
 
-Shapenet: synthetic but build with human annotations
-
-for many problems, we do not need "realism".
-
----
-
-## How to build synthetic dataset?
-
-* Media platforms
-  * Simulators engines
-  * Game Engines
-  * Inside games themselves
-
-<!-- Illustrate with examples; "we'll talk more about how to do it in the next lecture next week -->
----
-### Tools
-
-– Unreal 
-– Mujoco http://www.mujoco.org
+* Shapenet: synthetic but build with human annotations
 
 --- 
 
-### Beforehand Questions
+# Beforehand Questions
 
-* How much realism do we need?
-* Do we even need real data?
-* How much effort to make it work well on real scenarios?
-* How about the effort to generate synthetic data?
-* Who is using it?
+* How much **realism** do we need?
+* Do we still **need real data**?
+* How much effort to make it **work well** on real scenarios?
+* How about the **effort** to generate synthetic data?
+* **Who** is using it?
   
 ---
-# BMW Digital Twin
+# BMW Factory Digital Twin
 ### Who is using it?
 
-Digital twins BMW
+<div style="display: flex; justify-content: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6-DaWgg4zF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+---
+<!-- _class: topic -->
+<!-- _paginate: false -->
+
+# The Reality Gap
 
 ---
 
-The Reality Gap
+# The Reality Gap
+
+* Discrepancy between reality and synthetic data
+* It's hard to reproduce the richness of the real world
+* Subtle details as real data noise can also be a barrier
+
+### How much does it impact computer vision tasks?
 
 ---
+##### Driving in the matrix: Can virtual worlds replace human-generated annotations for real world tasks?
 
-"Furthermore, low-fidelity simulated sensors like image renderers are often unable to reproduce the richness and noise produced by their real- world counterparts. These differences, known collectively as the reality gap, form the barrier to using simulated data on real robots."
+![w:900 center](img/drivingmatrix1.png)
 
 ---
+<!-- _footer: M. Johnson-Roberson, C. Barto, R. Mehta, S. N. Sridhar, K. Rosaen, and R. Vasudevan. Driving in the matrix: Can virtual worlds replace human-generated annotations for real world tasks? In ICRA, 2017-->
+# How much realism do we need?
 
-One approach is to make the simulator closely match the physical reality by performing system identification and using high-quality rendering. Though using realistic RGB rendering alone has had limited success for transferring to real robotic tasks [16], incorporating realistic simulation of depth information can allow models trained on rendered images to transfer reasonably well to the real world [32]. Combining data from high-quality simulators with other approaches like fine-tuning can also reduce the number of labeled samples required in the real world
+* Gathered *high realism* data from GTA V
+* Trained a Faster-RCNN model for **object detection** on 10K, 20K and 50K synthetic images.
+* Evaluated performance on KITTI against a model trained on Cityscape.
+* Achieved high levels of performance on real-world data **training only with synthetic** examples
 
+---
+# Photorrealistic data
+
+* Number of synthetic images is significantly higher
+* Lighting, color and texture variantion in the real world seems greater 
+* Performance increased by a significant jump from 10K to 50K examples
+
+![bg height:45% right:45%](img/tabela-resultado-matrix.png)
+
+
+<!-- _footer: M. Johnson-Roberson, C. Barto, R. Mehta, S. N. Sridhar, K. Rosaen, and R. Vasudevan. Driving in the matrix: Can virtual worlds replace human-generated annotations for real world tasks? In ICRA, 2017-->
 
 ---
 # How much realism do we need?
 
-"Unlike these approaches, ours allows the use of low-quality renderers optimized for speed and not carefully
-matched to real-world textures, lighting, and scene configurations."
+*"Unlike these approaches, ours allows the use of low-quality renderers optimized for speed and not carefully matched to real-world textures, lighting, and scene configurations."*
 
+![bg height:80% left:54%](img/tobin-dr1.png)
 
-Tobin J, Fong R, Ray A, Schneider J, Zaremba W, Abbeel P (2017) Domain randomization fortransferring deep neural networks from simulation to the real world.2017 IEEE/RSJ Interna-tional Conference on Intelligent Robots and Systems (IROS):23–30
+<!-- _footer: Tobin J, Fong R, Ray A, Schneider J, Zaremba W, Abbeel P (2017) Domain randomization for transferring deep neural networks from simulation to the real world.2017 IEEE/RSJ Interna-tional Conference on Intelligent Robots and Systems (IROS):23–30-->
+
+---
+<!-- _class: topic -->
+
+# Domain Randomization
+
+---
+# Domain Randomization
+
+#### Idea
+Provide a wide simulated variability to synthetic data distribution so that the model is able to generalize to real world data.
+
+– Try to make reality a subset of the model "knowledge"
 
 ---
 
-#### Domain Randomization
+# Scene level Domain Randomization
 
-"The purpose of domain randomization is to provide
-enough simulated variability at training time such that at test time the model is able to generalize to real-world data. We randomize the following aspects of the domain for each sample used during training"
+* Number of objects
+* Relative and absolute positions
+* Number and shape of distractor objects
+* Contents of the scene background
+* Textures of all objects participating in the scene
+* So on... 
 
-The idea is simple: let us try to make the synthetic data distribution psyn suffi- ciently wide and varied so that the model trained on psyn will be robust enough to work well on preal. Ideally, we would like to cover preal with psyn, but in reality this is never
-achieved directly. Instead, synthetic data in computer vision can be randomized and made more diverse in a number of different ways at the level of either constructing a 3D scene or rendering 2D images from it:
-• at the scene construction level, a synthetic data generator (SDG) can ran- domize the number of objects, its relative and absolute positions, number and shape of distractor objects, contents of the scene background, textures of all objects participating in the scene, and so on;
-• at the rendering level, SDG can randomize lighting conditions, in partic- ular the position, orientation, and intensity of light sources, change the rendering quality by modifying image resolution, rendering type such as ray tracing or other options, add random noise to the resulting images, and so on
+---
+# Distractors
+
+* **Contextutal distractors**: objetcs similar to possible real scene elements, positioned randomly but coherently
+
+* **Flying distractors**: geometric shapes with random texture, size, and position
+
+---
+# Rendering Level Domain Randomization
+
+* Lighting condition
+* Rendering quality
+* Rendering type (ray tracing, rasterization ...)
+* Noise
+* So on...
+
+<!-- _footer: Tobin J, Fong R, Ray A, Schneider J, Zaremba W, Abbeel P (2017) Domain randomization for transferring deep neural networks from simulation to the real world.2017 IEEE/RSJ Interna-tional Conference on Intelligent Robots and Systems (IROS):23–30-->
+---
+
+# Training an object detection for grasping
+
+* Applied domain randomization with distractors (different objects at test time)
+* Detector trained with no prior information about the color of the target object
+* Model high enough accuracy in the real world to perform grasping in clutter.
+* Used a modified version of VGG16
+
+<!-- _footer: Tobin J, Fong R, Ray A, Schneider J, Zaremba W, Abbeel P (2017) Domain randomization for transferring deep neural networks from simulation to the real world.2017 IEEE/RSJ Interna-tional Conference on Intelligent Robots and Systems (IROS):23–30-->
 
 ---
 
-Prakash et al. [462] take the next logical step, continuing this effort to structured domain randomization. They still randomize all of the settings mentioned above, but only within realistic ranges, taking into account the structure and context of a specific scene. Finally, another important direction is learning how to randomize. Van
-Vuong et al [616] provide one of the first works in this direction, concentrating on picking the best possible domain randomization parameters for sim-to-real transfer of reinforcement learning policies. They show that the parameters that control sampling over Markov decision processes is important for the quality of transferring the learned policy to a real environment and that these parameters can be optimized. We mark this as a first attempt and expect more works devoted to structuring and honing the parameters of domain randomization.
+# Training an object detection for grasping
+
+![w:800](img/grasping.png)
+
+<!-- _footer: Tobin J, Fong R, Ray A, Schneider J, Zaremba W, Abbeel P (2017) Domain randomization for transferring deep neural networks from simulation to the real world.2017 IEEE/RSJ Interna-tional Conference on Intelligent Robots and Systems (IROS):23–30-->
 
 ---
 
-Realism on image level
-– Realism in sensor level:
-  - Depth sensor (not so perfect)
-  - Camera noise and distortion as real camera
+# Training deep networks with synthetic data: Bridging the reality gap by domain randomization
 
-Realism on Scene level
-- Coherence
-
----
-We note a recent joint effort
-in this direction by NVIDIA, University of Toronto, and MIT: Kar et al. [309]
-present Meta-Sim, a general framework that learns to generate synthetic urban
-environments (see also Section 3.1). Meta-Sim represents the composition of
-a 3D scene with a scene graph and a probabilistic scene grammar, a common
-representation in computer graphics [715].
-
-
-The goal is to learn how to trans-form samples coming from the probabilistic grammar so that the distribution of
-synthetic scenes becomes similar to the distribution of scenes in a real dataset;
-this is known as bridging the distribution gap. What’s more, Meta-Sim can also
-learn these transformations with the objective of improving the performance
-of networks trained on the resulting synthetic data for a specific task such as
-object detection (see also Section 8.2).
----
-
-– Contextutal distractors: objetcs similar to possible real scene elementos, positioned randomly but coherently
-
-– Flying distractors: geometric shapes with random texture, size, and position
+![](img/tremblay1.png)
 
 ---
 
-Number and shape of distractor objects on the table • Position and texture of all objects on the table • Textures of the table, floor, skybox, and robot • Position, orientation, and field of view of the camera • Number of lights in the scene • Position, orientation, and specular characteristics of the lights
-• Type and amount of random noise added to images Since
+# Tremblay et al, 2018 
+
+* Number and types of objects
+  * 36 downloaded 3D models of generic sedan and hatch-back cars
+* Number, types, colors, and scales of distractors, selected from a set of 3D models
+* Texture and background photograph, both **taken from the Flickr 8K dataset**
+* location of the virtual camera with respect to the scene
+* Angle of the camera with respect to the scene
+* Number and locations of lights (from 1 to 12)
+* Visibility of the ground plane.
+
+<!-- _footer: J. Tremblay, A. Prakash, D. Acuna, M. Brophy, V. Jampani, C. Anil, T. To, E. Cameracci, S. Boochoon, and S. Birchfield. Training deep networks with synthetic data: Bridging the reality gap by domain randomization. In Workshop on Autonomous Driving, CVPR-Workshops, 2018. -->
+
+---
+<!-- _class: topic -->
+<!-- _paginate: false -->
+# Fine Tuning
+
+---
+
+# Tremblay et al, 2018
+
+* Object detection on cars + Domain randomization
+* Dataset cheaper to produce
+* Improved performance with fine-tuning on real images
+
+![](img/tremblay2.png)
+
+<!-- _footer: J. Tremblay, A. Prakash, D. Acuna, M. Brophy, V. Jampani, C. Anil, T. To, E. Cameracci, S. Boochoon, and S. Birchfield. Training deep networks with synthetic data: Bridging the reality gap by domain randomization. In Workshop on Autonomous Driving, CVPR-Workshops, 2018. -->
+
+---
+# Tremblay et al, 2018
+
+* Competitive results training only on synthetic dataset
+* With additional fine-tuning on real data, the network yields better performance
+
+![bg height:60% right:54%](img/tremblay-result1.png)
+
+<!-- _footer: J. Tremblay, A. Prakash, D. Acuna, M. Brophy, V. Jampani, C. Anil, T. To, E. Cameracci, S. Boochoon, and S. Birch- field. Training deep networks with synthetic data: Bridging the reality gap by domain randomization. In Workshop on Autonomous Driving, CVPR-Workshops, 2018. -->
+
+---
+
+<!-- _class: topic -->
+<!-- _paginate: false -->
+# Domain Randomization Strategy
+
+---
+
+# An Annotation Saved is an Annotation Earned: Using Fully Synthetic Training for Object Instance Detection
+
+* Retail objects detection
+* Scene **completely synthetic**
+* Two layers of objects: background and foreground
+* Control over the statistics of the dataset
+
+---
+# Dataset creation
+
+<div style="display: flex; justify-content: center;">
+<iframe width="810" height="456" src="https://www.youtube.com/embed/x7vj-dFWUUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!-- _footer: S. Hinterstoisser, O. Pauly, H. Heibel, M. Marek, and M. Bokeloh, “An annotation saved is an annotation earned: Using fully synthetic training for object detection,” in 2019 IEEE/CVF International Conference on Computer Vision Workshops --->
+
+---
+
+# How much effort?
+
+##### Synthetic
+* About 5 hours to scan all 64 foreground objects
+
+##### Real
+* 10  hours to acquire the real images
+* 185 hours to label the training set + 6 hours for correction
+
+#### What about the cost to increase dataset?
+
+---
+
+# A strategy for generating synthetic data
+
+* Controled size of the background
+* Distribution of background colors
+* Foreground models are presented to the network equally under all possible poses and conditions with increasing complexity
+* Occlusion layer
+
+![bg right:50%](img/rgb_11.png)
+
+---
+# Hinterstoisser et al, 2019
+ 
+* Model trained only on synthetic data outperformed models trained on real data
+* It works on challenging sistuations
+
+![bg height:64% right:54%](img/hinterstoisser1.png)
+ 
+<!-- _footer: S. Hinterstoisser, O. Pauly, H. Heibel, M. Marek, and M. Bokeloh, “An annotation saved is an annotation earned: Using fully synthetic training for object detection,” in 2019 IEEE/CVF International Conference on Computer Vision Workshops --->
+---
+### Curriculum vs Random pose generation
+
+*"Furthermore, we show through ablation experiments the benefits of curriculum vs random pose generation, the effects of relative scale of background objects with respect to foreground objects, the effects of the amount of foreground objects rendered per image, the benefits of using synthetic background objects, and finally the effects of random colors and blur."*
+
+![width:600 center](img/hinterstoisser2.png)
+
+---
+
+# Cut and Paste (image to image)
+
+* Cut and paste from easy to challenging scenarios
+* Semantic conditioning with GAN-based architecture
+
+![bg height:80% right:60%](img/cutpastelearn.png)
+
+<!-- _footer: D. Dwibedi, I. Misra, and M. Hebert. Cut, paste and learn: Surprisingly easy synthesis for instance detection. In ICCV, 2017 -->
+
+---
+
+<!-- _class: topic -->
+
+# Domain Adaptation
+
 ---
 
 # Domain Adaptation
-Domain adaptation is a set of techniques designed to make a model trained on one domain of data, the source domain, work well on a different, target domain
+
+## Domain adaptation is a set of techniques designed to make a model trained on one domain of data, the source domain, work well on a different, target domain.
+
 
 ---
-## Synthetic to real refinement
+<!-- _footer: Stephan R. Richter, Hassan Abu AlHaija, and Vladlen Koltun. ["Enhancing Photorealism Enhancement"](https://intel-isl.github.io/PhotorealismEnhancement/) arXiv:2105.04619 (2021)-->
 
-Pg 57-58 survey
+<style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
 
-Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Joshua Susskind, Wenda Wang, Russell Webb; Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017, pp. 2107-2116
+# Synthetic to real refinement
 
----
-Dilipkumar [148] applied SimGAN to improve handwriting recognition. They generated synthetic handwriting images and applied SimGAN to refine them, with significantly improved recognition of real handwriting after training on a hybrid datase
+![w: 900 h:500 center](img/gtav-real.png)
 
----
-
-A recent example that applies GAN-based refinement in a classical computer
-vision setting is provided by Wang et al. [623]. They consider the problem of recognizing objects inside an automatic vending machines; this is a basic functionality needed for monotoring the state of supplies and is usually done based on object detection. Wang et al. begin by scanning the objects, adding random deformations to the resulting 3D models (see Section 5.2), setting up scenes and rendering with settings matching the fisheye cameras used in smart vending machines. Then they refine rendered images with virtual-to-real style transfer done by a CycleGAN-based architecture. The novelty here is that Wang et al. separate foreground and background losses, arguing that style transfer needed for foreground objects is very different from (much stronger than) the style transfer for backgrounds. Thus, they use the overall loss function [pg62]
-
-Segmentation into foreground and background is done automatically in syn- thetic data and is made easy in [623] for real data since the camera position is fixed, and the authors can collect a dataset of real background templates from the vending machines they used in the experiments and then simply subtract the backgrounds to get the foreground part. As a result, Wang et al. report signif- icantly improved results when using hybrid datasets of real and synthetic data for all three tested object detection architectures: PVANET [320], SSD [372], and YOLOv3 [482]. Even more importantly, they report a comparison between basic and refined synthetic data with clear gains achieved by refinement across all architectures.
-
-Wang et al. Synthetic Data Generation and Adaption for Object Detection in Smart Vending Machines
-
----
-GANs image to image ... SKIP?
-Another idea for generating synthetic data from real is to compose parts
-of real images to produce synthetic ones. We have discussed the cut-and-paste approaches in 5.3; a natural continuation of these ideas would be to use more complex, semantic conditioning with a GAN-based architecture.
 
 ---
 
-## Domain adaptation at the feature/model level
+# Synthetic to real refinement
 
-feature-level or model-level domain adaptation, i.e., methods that work in the space of features or model weights and never go back to change the actual data.
+![w:800 center](img/simgan-eyes.png)
+![w:800 center](img/simgan-hands.png)
 
 
-"A key insight of our approach is that the synthetically generated images should be similar to real images, not in terms of image quality, but rather in terms of features used during the detector training."
+<!-- _footer: Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Joshua Susskind, Wenda Wang, Russell Webb; Learning from Simulated and Unsupervised Images through Adversarial Training; CVPR, 2017 -->
+---
+# SimGAN: Simulation + Unsupervised Learning
 
-Artem Rozantsev, Vincent Lepetit, and Pascal Fua. On rendering syn- thetic images for training an object detector. Computer Vision and Image Understanding, 137:24 – 37, 2015
+* Learn a model to improve the realism of a simulator's output
+* Simulated + Unsupervised Learning (no labels!)
+* GANs conditioned on synthetic images
+* **Must preserve annotations**
+
+
+<!-- _footer: Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Joshua Susskind, Wenda Wang, Russell Webb; Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017, pp. 2107-2116 -->
 
 ---
-* Differential Privacy???
---- 
-### Challenges
+# UnityEyes dataset
 
-* Differences in camera hardware
+##### Annotating the eye images with a gaze direction vector is challenging
 
-* Photorealistic data is still hard to generate (is it comparable to annotate??)
+![width:980 center](img/eyagazing.png)
+
+<!-- _footer: E. Wood, T. Baltrušaitis, L. Morency, P. Robinson, and A. Bulling. Learning an appearance-based gaze estimator from one million synthesised images. In Proc. ACM Symposium on Eye Tracking Research & Applications, 2016. -->
+
+---
+# SimGAN
+
+### Training losses
+
+$$L_D(\phi) = - \sum_i{log(D_\phi(\tilde{x_i}))} - \sum_j{log(1 - D_\phi(y_j))}$$
+
+$$L_R(\theta) = \sum_i{l_{real}(\theta; x_i, \gamma)} + \lambda l_{reg}(\theta; x_i)$$
+
+$$l_{real}(\theta; x_i, \gamma) = -log(1 - D_\phi(R_{\theta}(x_i)))$$
+
+$$l_{reg} = ||\psi(\tilde{x}) - x||_1$$
+
+
+<!-- _footer: Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Joshua Susskind, Wenda Wang, Russell Webb; Learning from Simulated and Unsupervised Images through Adversarial Training; CVPR, 2017 -->
 
 ---
 
-* How about the effort to generate synthetic data?
+# SimGAN Results
 
-next week...
----
-Finally, a note of caution: GAN-based refinement is not the only way to go.
-Kan et al. [304] compared three approaches to data augmentation for pupil cen- ter point detection, an important subproblem in gaze estimation: affine trans- formations of real images, synthetic images from UnityEyes, and GAN-based refinement. In their experiments, real data augmentation with affine transfor- mations was a clear winner, with the GAN improving over UnityEyes but falling short of the augmented real dataset.
-This is one example of a general common
-wisdom: in cases where a real dataset is available, one should squeeze out all
-the information available in it and apply as much augmentation as possible,
-regardless of whether the dataset is augmented with synthetic data or not.
+– MPIIGaze dataset of real eyes
+– Metric is mean eye gaze estimation error in deegree
+
+![bg height:50% right:60%](img/simgan-results.png)
+
+<!-- _footer: Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Joshua Susskind, Wenda Wang, Russell Webb; Learning from Simulated and Unsupervised Images through Adversarial Training; CVPR, 2017 -->
 
 ---
-Procedural generation?
+
+# Synthetic data generation and adaption for object detection in smart vending machines
+
+![width:940 center](img/wang1.png)
 
 ---
-Will be even more important in the future
+# Wang et al 2019
+
+* Object recognition inside an automatic vending machines
+* Scanned objects + random deformations to the resulting 3D models
+* Rendering with settings matching the fisheye cameras 
+* Refine rendered images with virtual-to-real style transfer done by a CycleGAN-based architecture.
+
+<!--_footer: Kai Wang, Fuyuan Shi, Wenqi Wang, Yibing Nan, and Shiguo Lian. Synthetic data generation and adaption for object detection in smart vending machines. CoRR, abs/1904.12294, 2019-->
+---
+
+# Wang et al 2019
+
+* Novelty: separate foreground and background losses
+  * Style transfer needed for foreground objects stronger than the style transfer for backgrounds.
+
+![width:800 center](img/wang2.png)
+
+---
+
+# Wang et al 2019
+* Segmentation in synthetic data: automatic
+* For real data, a bit more of work...
+
+![width:700 center](img/wang2.png)
+
+<!--_footer: Kai Wang, Fuyuan Shi, Wenqi Wang, Yibing Nan, and Shiguo Lian. Synthetic data generation and adaption for object detection in smart vending machines. CoRR, abs/1904.12294, 2019-->
+
+---
+
+# Wang et al 2019
+
+* Results improved when using hybrid datasets for all three tested object detection architectures: PVANET, SSD, and YOLOv3
+* Comparison between basic and refined synthetic data shows gains achieved by refinement (PVANET)
+
+![bg height:64% right:50%](img/wang-result1.png)
+
+<!--_footer: Kai Wang, Fuyuan Shi, Wenqi Wang, Yibing Nan, and Shiguo Lian. Synthetic data generation and adaption for object detection in smart vending machines. CoRR, abs/1904.12294, 2019-->
+
+---
+<!-- _class: topic -->
+<!-- _paginate: false -->
+
+# Other approaches
+
+---
+
+# Other interesting approaches
+
+* Randomize only within realistic ranges
+  * Quan Van Vuong, Sharad Vikram, Hao Su, Sicun Gao, and Henrik I. Christensen. How to pick the domain randomization parameters for sim- to-real transfer of reinforcement learning policies? ArXiv, abs/1903.11774, 2019
+
+* Domain adaptation at the feature/model level
+  * Artem Rozantsev, Vincent Lepetit, and Pascal Fua. On rendering synthetic images for training an object detector. Computer Vision and Image Understanding, 137:24 – 37, 2015
+
+---
+
+<!-- _class: topic -->
+<!-- _paginate: false -->
+
+# Conclusion
+
+---
+
+# Conclusion
+
+* Build large scale datasets is hard!
+* Despite the reality gap, we don't necessarily need photorrealism
+* Real data might help to improve performance
+* How much effort to make it **work well** on real scenarios?
+* Synthetic data will be even more important
+  * There are competitive results already
+
+---
+<!-- _class: topic -->
+<!-- _paginate: false -->
+
+# Wait...!!! 
+# How can I do it?
+
+---
+
+# Next week...
+
+##### Generation of synthetic data for machine learning
+
+<br/>
+
+#### 1. ~~Why does synthetic data matter?~~
+#### 2. **How to generate synthetic data and train a model with it**
+#### 3. Do they live in a simulation? Training models for dynamic environments
 
 ---
 <!-- paginate: false -->
+<!-- _class: invert -->
+![bg](img/visgraf-background.jpeg)
 
-# Thank You
+# THANK YOU!
 
 [hallpaz@impa.br](mailto:hallpaz@impa.br)
-
-
-For other domains, we recommend:
-
-Nikolenko, Sergey. “Synthetic data for deep learning,” arXiv preprint
-arXiv:1909.11512, 2019.
-
----
-
-

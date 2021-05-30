@@ -18,6 +18,10 @@ marp: true
 ### 3. Do they live in a simulation? Training models for dynamic environments
 
 ---
+For each foreground object, we start by generating a
+large set of poses uniformly covering the pose space in which we want to be able to detect the corresponding ob- ject. To do so, we use the approach described in [10] and generate rotations by recursively dividing an icosahedron, the largest convex regular polyhedron. This approach yields uniformly distributed vertices on a sphere and each vertex represents a distinct view of an object defined by two out- of-plane rotations.
+
+---
 
 Procedural generation?
 
