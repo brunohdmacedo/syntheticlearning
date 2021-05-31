@@ -7,7 +7,7 @@ description: Neste seminário, vamos apresentar problemas que motivam o uso de d
 permalink: /por-que-dados-sinteticos
 ---
 
-## [Please, check the slides here.](/presentation1.html)
+## [Please, check the slides here.](/syntheticlearning/presentation1.html)
 
 ### Como as máquinas aprendem?
 
