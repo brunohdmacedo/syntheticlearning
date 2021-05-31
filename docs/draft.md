@@ -252,5 +252,5 @@ regardless of whether the dataset is augmented with synthetic data or not.
 
 ---
 
-# References:
+
 

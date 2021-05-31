@@ -27,6 +27,10 @@ Procedural generation?
 
 S. Qi, Y. Zhu, S. Huang, C. Jiang, and S. Zhu. Human-centric indoor scene synthesis using stochastic grammar. In 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 5899–5908, June 2018.
 
+
+
+SCHEMA: https://www.nuscenes.org/nuscenes#data-format
+https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation%7E/Schema/Synthetic_Dataset_Schema.md
 ---
 https://logicai.io/blog/synthetic-data-deep-learning/
 

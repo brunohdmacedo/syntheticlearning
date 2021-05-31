@@ -289,7 +289,7 @@ $$ f(x) = y $$
 * Lighting, color and texture variantion in the real world seems greater 
 * Performance increased by a significant jump from 10K to 50K examples
 
-![bg height:45% right:45%](img/tabela-resultado-matrix.png)
+![bg height:80% right:55%](img/tabela-driving-matrix.jpeg)
 
 
 <!-- _footer: M. Johnson-Roberson, C. Barto, R. Mehta, S. N. Sridhar, K. Rosaen, and R. Vasudevan. Driving in the matrix: Can virtual worlds replace human-generated annotations for real world tasks? In ICRA, 2017-->
@@ -676,3 +676,29 @@ $$l_{reg} = ||\psi(\tilde{x}) - x||_1$$
 # THANK YOU!
 
 [hallpaz@impa.br](mailto:hallpaz@impa.br)
+
+---
+
+# References:
+
+1. Nikolenko, Sergey; [Synthetic Data for Deep learning](https://arxiv.org/abs/1909.11512); Arxiv, 2019.
+2. M. Johnson-Roberson, C. Barto, R. Mehta, S. N. Sridhar, K. Rosaen, and R. Vasudevan. Driving in the matrix: Can virtual worlds replace human-generated annotations for real world tasks? In ICRA, 2017.
+3. M. Johnson-Roberson, C. Barto, R. Mehta, S. N. Sridhar, K. Rosaen, and R. Vasudevan. Driving in the matrix: Can virtual worlds replace human-generated annotations for real world tasks? In ICRA, 2017
+4. Tobin J, Fong R, Ray A, Schneider J, Zaremba W, Abbeel P (2017) Domain randomization for transferring deep neural networks from simulation to the real world.2017 IEEE/RSJ Interna-tional Conference on Intelligent Robots and Systems (IROS):23–30.
+
+---
+
+# References:
+
+5. J. Tremblay, A. Prakash, D. Acuna, M. Brophy, V. Jampani, C. Anil, T. To, E. Cameracci, S. Boochoon, and S. Birchfield. Training deep networks with synthetic data: Bridging the reality gap by domain randomization. In Workshop on Autonomous Driving, CVPR-Workshops, 2018.
+6. S. Hinterstoisser, O. Pauly, H. Heibel, M. Marek, and M. Bokeloh, “An annotation saved is an annotation earned: Using fully synthetic training for object detection,” in 2019 IEEE/CVF International Conference on Computer Vision Workshops.
+7. D. Dwibedi, I. Misra, and M. Hebert. Cut, paste and learn: Surprisingly easy synthesis for instance detection. In ICCV, 2017.
+8. Stephan R. Richter, Hassan Abu AlHaija, and Vladlen Koltun. ["Enhancing Photorealism Enhancement"](https://intel-isl.github.io/PhotorealismEnhancement/) arXiv:2105.04619 (2021).
+
+---
+
+# References:
+
+9.  Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Joshua Susskind, Wenda Wang, Russell Webb; Learning from Simulated and Unsupervised Images through Adversarial Training; CVPR, 2017.
+10. E. Wood, T. Baltrušaitis, L. Morency, P. Robinson, and A. Bulling. Learning an appearance-based gaze estimator from one million synthesised images. In Proc. ACM Symposium on Eye Tracking Research & Applications, 2016.
+11. Kai Wang, Fuyuan Shi, Wenqi Wang, Yibing Nan, and Shiguo Lian. Synthetic data generation and adaption for object detection in smart vending machines. CoRR, abs/1904.12294, 2019
