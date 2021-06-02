@@ -9,7 +9,8 @@ paginate: true
 ---
 <!-- _color: white -->
 <!-- _class: invert -->
-![bg fit right:25%](img/visgraf_completo_white.png)
+<!-- _paginate: false -->
+![bg fit right:32%](img/visgraf-part.jpeg)
 
 # How to generate synthetic data and train a model with it? 
 
@@ -30,6 +31,7 @@ paginate: true
 ---
 
 <!-- _class: topic -->
+<!-- _paginate: false -->
 
 # Recap
 
@@ -53,7 +55,7 @@ paginate: true
 * **How to train** an object detector model using the generated data
 
 ---
-
+<!-- _paginate: false -->
 <!-- _class: topic -->
 # Tools
 
@@ -75,6 +77,14 @@ paginate: true
 
 ---
 
+# Blender
+
+- Uses Python as scripting language
+
+![bg right:66% fit](img/blender-modeling.jpg)
+
+---
+
 # BlenderProc
 
 - Modular procedural pipeline
@@ -83,7 +93,7 @@ paginate: true
 
 ![bg fit right:30%](img/blender-proc-data.png)
 
-<!--_footer: BlenderProc [on Github](https://github.com/DLR-RM/BlenderProc)-->
+<!--_footer: BlenderProc [on Github](https://github.com/DLR-RM/BlenderProc) | [Examples](https://logicai.io/blog/synthetic-data-deep-learning/) -->
 
 ---
 # Omniverse
@@ -106,13 +116,20 @@ paginate: true
 
 # Unity
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IuFOfWLlwwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+![bg right:33% fit](img/unity-cv.png)
+
+<!-- _footer: Page: [Unity Computer Vision](https://unity.com/products/computer-vision) -->
+---
+
+# Unity
+
 - Perception Package
 - Dataset Insights
-- Cloud
+- Cloud simulations
 * Synthdet project and tutorials
 
-
-https://logicai.io/blog/synthetic-data-deep-learning/
 
 ---
 <!-- _class: topic -->
@@ -139,130 +156,101 @@ https://logicai.io/blog/synthetic-data-deep-learning/
 
 # Pose
 
-* generate rotations by recursively dividing an icosahedron,
-the largest convex regular polyhedron. This approach yields
-uniformly distributed vertices on a sphere
-* Fur-thermore, we sample the distance at which we render a fore-ground object inversely proportional to its projected size to
-guarantee an approximate linear change in pixel coverage
-of the projected object between consecutive scale levels.
+* Generate rotations by uniformly distributing vertices on a sphere
+* Sample the distance of a foreground object inversely proportional to its projected size to guarantee an approximate linear change in pixel coverage
 
 ---
 
+# Deterministic schedule for poses
 
-This means that there is a deterministic schedule
-at which step each object and pose should be rendered:
-
-1. We start with the scale that is closest to the camera and gradually move to the one that is farthest away; As a result, each object initially appears largest in the image, being therefore easier to learn for the network. As
-2. For each scale, we iterate through all possible out-of-plane rotations, and for each out-of-plane rotation, we iterate through all in-plane rotations.
-3. Once we have a scale, an out-of- and an in-plane rota- tion, we iterate through all objects, and render each of them with the given pose at a random location using a uniform distribution.
-4. After having processed all objects, at all in- and out-of plane rotations, we move to the next scale level.
+1. Pick a scale: closest to (gradually) farthest
+2. Iterate through all possible rotations
+3. Then iterate through all objects, and render each of them with the given pose at a random location using a uniform distribution.
+4. Finally, move to the next scale level.
 
 ![bg left:38% fit](img/curriculum-strategy.png)
 
 ---
 
+# Occlusion layer
 
-For rendering, we allow cropping of foreground objects
-at the image boundaries up to 50%.
-
-
-In addition, we al-low for overlap between each pair of foreground objects
-up to 30%.
-
-
-We also generate an occlusion layer where we allow ran-dom objects from the background dataset to partially oc-clude the foreground objects.
+* Allow for overlap between each pair of foreground objects up to 30%
+* Allow random objects from the background dataset to partially occlude the foreground objects
+* Allow cropping of foreground objects at the image boundaries up to 50%
 
 ---
 # Post processing
 
-Having the background, foreground and occlusion layer,
-we fuse all three layers to one combined image: the occlusion layer is rendered on top of the foreground layer and the result is rendered on top of the background layer. Fur- thermore, we add random light sources with random pertur- bations in the light color. 
-* Finally, we add white noise and blur the image with a Gaussian kernel where both, 
-  * the kernel size and the standard deviation, are randomly selected. 
-* **Thus, background, foreground and the occluding parts share the same image properties**.
+* Occlusion layer -> foreground layer -> background layer
+* Random light sources with random perturbations in the light color
+* White noise and blur with a Gaussian kernel
+  * Randomly selected kernel size and standard deviation 
+* Important: background, foreground and the occluding parts **share the same image properties**.
 
 ---
 
+# Evaluation
 
-Using this camera, we built a training and
-evaluation benchmark of 1158 and 250 real RGB images,
-respectively, at a resolution of 960x720.
+* "We built a training and evaluation benchmark of 1158 and 250 real RGB images, respectively, at a resolution of 960x720"
 
+* Benchmark training set 
+  * Random subsets of the objects of interest 
+  * Cluttered background
+  * Different lighting conditions 
 
-Our benchmark
-training set consists of images picturing random subsets of
-the objects of interest disposed on cluttered background and
-in different lighting conditions (natural day/evening light
-vs. artificial light). The evaluation set consists of images
-displaying the objects of interest randomly distributed in
-shelves, boxes or layed out over random clutter. Since it
-is crucial for reliable object detection, we made sure that
-in both sets each object is shown in various poses and ap-pears equally (roughly around 120 times for each object in
-the training set and around 40 times in the evaluation set).
+* Each object is shown in various poses and appears equally
 
-All three models have been trained using distributed asyn-chronous stochastic gradient descent with a learning rate
-of 0.0001 for 850K iterations.
-![bg fit right](img/synthetic-vs-real.png)
+* All three models have been trained using distributed asynchronous stochastic gradient descent with a learning rate of 0.0001 for 850K iterations.
+
+<!-- _footer: S. Hinterstoisser, O. Pauly, H. Heibel, M. Marek, and M. Bokeloh, “An annotation saved is an annotation earned: Using fully synthetic training for object detection,” in 2019 IEEE/CVF --->
+
+---
+## Synthetic vs Real
+
+![bg fit right:60%](img/synthetic-vs-real.png)
+
+---
+## Random vs Curriculum strategy
+
+* Faster R-CNN models initialized with the same weights
+![bg right:55% fit](img/random-vs-curriculum.png)
 
 ---
 
+## Relative size of background objects
 
-we compare 2
-Faster R-CNN models initialized with the same weights, the
-first being trained using complete random pose sampling,
-and the other one following our curriculum strategy.
-![bg right fit](img/random-vs-curriculum.png)
+* Best results with similar or larger size than foreground objects.
+  * Smaller scale ranges may look like textures
 
----
-
-
-* shows that best re-sults can be obtained for a range that yields background ob-jects of similar or larger size than foreground objects.
-
-
-Using smaller scale ranges yields background images that look
-more like textures,
-
-![bg right fit](img/relative-scale.png)
+![bg right:56% fit](img/relative-scale.png)
 
 ---
  
-- dsdsd shows that a higher number of foreground objects
-yields better performance
-- Please note that we only set an
-upper limit to the number of foreground objects drawn in
-one image
-- In particular, in the early stages of curriculum learn-ing we can only fit 8-9 objects in one image on average.
+## Higher number of foreground objects -> better
+###### *"note that we only set an upper limit to the number of foreground objects drawn in one image"*
 
-![](img/number-foreground-objects.png)
+![height:420](img/number-foreground-objects.png)
 
 ---
 
-# Real vs Synthetic Background
 
-- fully synthetic back- ground coverage outperforms images in which only parts of the image are covered by synthetic objects
+## Real vs Synthetic Background
+
+- Fully synthetic background yelds better performance
 - Network can't distinguish based on image nature
 
-![bg right fit](img/real-vs-synthetic-background.png)
+![bg right:55% fit](img/real-vs-synthetic-background.png)
 
 ---
-# XXX Single influence
+## Other parameters
 
-- Blurring and random light color are important yet
-simple operations to apply to the synthetic images to improve the
-results.
 
-![](img/single-influence.png)
-
----
-# Strategy
-
-For each foreground object, we start by generating a
-large set of poses uniformly covering the pose space in which we want to be able to detect the corresponding ob- ject. To do so, we use the approach described in [10] and generate rotations by recursively dividing an icosahedron, the largest convex regular polyhedron. This approach yields uniformly distributed vertices on a sphere and each vertex represents a distinct view of an object defined by two out- of-plane rotations.
+![height:540](img/single-influence.png)
 
 ---
 <!-- _class: topic -->
 
-# How to generate
+# How to generate the synthetic dataset
 
 ---
 
@@ -276,15 +264,17 @@ https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity
 
 ---
 
-# Results...
-
----
-
-# How can we do it?
-
----
-
 # Unity Tutorials
+
+* Synthdet [project](https://github.com/Unity-Technologies/SynthDet)
+* Unity [Perception package](https://github.com/Unity-Technologies/com.unity.perception)
+
+---
+# Synthdet workflow
+
+![](img/synthdet-workflow.png)
+
+<!-- _footer: from Synthdet tutorial -->
 
 ---
 
@@ -319,15 +309,19 @@ S. Qi, Y. Zhu, S. Huang, C. Jiang, and S. Zhu. Human-centric indoor scene synthe
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/visgraf/syntheticlearning/blob/main/notebooks/SyntheticDataObjectDetection.ipynb)
 
 ---
-
+<!-- _class: topic -->
+<!-- _paginate: false -->
 # Conclusion
 
 ---
 
 # Conclusion
 
-* There tools available 
-* A small team can do it
+* There are many tools available to generate synthtetic datasets
+* It's important to have a strategy to generate good data
+  * We can iterate dataset versions
+* Even a small team can generate large scale synthetic datasets
+  * There are already tutorials to help with this task
 
 ---
 <!-- _class: topic -->
@@ -355,4 +349,11 @@ S. Qi, Y. Zhu, S. Huang, C. Jiang, and S. Zhu. Human-centric indoor scene synthe
 # THANK YOU!
 
 [hallpaz@impa.br](mailto:hallpaz@impa.br)
+
+---
+
+# References
+
+1. S. Hinterstoisser, O. Pauly, H. Heibel, M. Marek, and M. Bokeloh, “An annotation saved is an annotation earned: Using fully synthetic training for object detection,” in 2019 IEEE/CVF
+2. 
 
