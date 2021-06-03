@@ -39,7 +39,7 @@ paginate: true
 # Last week, we saw ...
 
 * **We need a lot of data** to train machine learning models
-* Creating large scale datasets is hard and presents both technical and ethical challenges
+* Creating large scale **datasets** is hard and presents both **technical and ethical challenges**
 * **Synthetic data** can help us overcome these challenges
 * But we must pay the cost of the **Reality Gap**
   * Domain randomization
@@ -66,11 +66,11 @@ paginate: true
   * [Blender](https://www.blender.org)
   * [Unreal Engine](https://www.unrealengine.com/en-US/)
   * [Unity](https://unity.com)
-  * [Nvidia Omniverse]()
+  * [Nvidia Omniverse](https://developer.nvidia.com/nvidia-omniverse-platform)
 * Inside games
   * GTA V
-  * Half-Life 2
-* Simulators engines
+  * Half-Life 2 (Taylor et al, 2007), etc
+* Other simulators engines
   * [Mujoco](http://www.mujoco.org)
 
 <!-- direita, imagem de cenário 3d com eixos -->
@@ -128,7 +128,7 @@ paginate: true
 - Perception Package
 - Dataset Insights
 - Cloud simulations
-* Synthdet project and tutorials
+* **Synthdet project and tutorials**
 
 
 ---
@@ -140,10 +140,11 @@ paginate: true
 
 # An annotation saved is an annotation earned: Using fully synthetic training for object detection
 
-* Retail objects detection
-* Scene **completely synthetic**
-* Two layers of objects: background and foreground
-* Control over the statistics of the dataset
+###### Last week...
+- Retail objects detection
+- Scene **completely synthetic**
+- Two layers of objects: background and foreground
+- Control over the statistics of the dataset
 
 <!-- _footer: S. Hinterstoisser, O. Pauly, H. Heibel, M. Marek, and M. Bokeloh, “An annotation saved is an annotation earned: Using fully synthetic training for object detection,” in 2019 IEEE/CVF --->
 
@@ -212,14 +213,14 @@ paginate: true
 ---
 ## Random vs Curriculum strategy
 
-* Faster R-CNN models initialized with the same weights
+- Faster R-CNN models initialized with the same weights
 ![bg right:55% fit](img/random-vs-curriculum.png)
 
 ---
 
 ## Relative size of background objects
 
-* Best results with similar or larger size than foreground objects.
+- Best results with similar or larger size than foreground objects.
   * Smaller scale ranges may look like textures
 
 ![bg right:56% fit](img/relative-scale.png)
@@ -254,33 +255,20 @@ paginate: true
 
 ---
 
-# Synthdet
-
-<iframe width="810" height="456" src="https://www.youtube.com/embed/x7vj-dFWUUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-SCHEMA: https://www.nuscenes.org/nuscenes#data-format
-https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation%7E/Schema/Synthetic_Dataset_Schema.md
-
----
-
 # Unity Tutorials
 
-* Synthdet [project](https://github.com/Unity-Technologies/SynthDet)
-* Unity [Perception package](https://github.com/Unity-Technologies/com.unity.perception)
+- Synthdet [project](https://github.com/Unity-Technologies/SynthDet)
+- Unity [Perception package](https://github.com/Unity-Technologies/com.unity.perception)
 
----
-# Synthdet workflow
+![bg right:66% fit](img/synthdet-workflow.png)
 
-![](img/synthdet-workflow.png)
-
-<!-- _footer: from Synthdet tutorial -->
+<!-- _footer: SynthDet: An end-to-end object detection pipeline using synthetic data -->
 
 ---
 
 # Dataset evaluation
 
-- Python package: Dataset Insights 
+- Python package: Dataset Insights ([notebook](https://colab.research.google.com/github/visgraf/syntheticlearning/blob/main/notebooks/SynthDetStatistics.ipynb))
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/visgraf/syntheticlearning/blob/main/notebooks/SynthDetStatistics.ipynb)
 
@@ -290,9 +278,12 @@ https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity
 
 ---
 
-Procedural generation?
+# Procedural generation?
 
-S. Qi, Y. Zhu, S. Huang, C. Jiang, and S. Zhu. Human-centric indoor scene synthesis using stochastic grammar. In 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 5899–5908, June 2018.
+
+- S. Qi, Y. Zhu, S. Huang, C. Jiang, and S. Zhu. Human-centric indoor scene synthesis using stochastic grammar. IEEE/CVF, 2018.
+
+![bg right fit](img/procedural-scene.png)
 
 ---
 <!-- _class: topic -->
@@ -350,10 +341,4 @@ S. Qi, Y. Zhu, S. Huang, C. Jiang, and S. Zhu. Human-centric indoor scene synthe
 
 [hallpaz@impa.br](mailto:hallpaz@impa.br)
 
----
-
-# References
-
-1. S. Hinterstoisser, O. Pauly, H. Heibel, M. Marek, and M. Bokeloh, “An annotation saved is an annotation earned: Using fully synthetic training for object detection,” in 2019 IEEE/CVF
-2. 
 
