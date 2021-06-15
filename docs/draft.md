@@ -252,5 +252,68 @@ regardless of whether the dataset is augmented with synthetic data or not.
 
 ---
 
+PART 3
+
+unsupervised transfer of an end-to-end driving model from a simulated environment to a real vehicle.
+
+This work goes beyond simple
+image-to-image translation by making the desired task of
+driving a differentiable component within a deep learning
+architecture.
 
 
+"Learning to Drive from Simulation without Real World Labels
+Alex"
+
+# Study later
+
+https://towardsdatascience.com/learning-to-simulate-c53d8b393a56
+
+https://towardsdatascience.com/deep-learning-for-projectile-trajectory-modeling-fb6380e06b8f
+
+
+# Simulate phenomena
+# Simulations in general
+
+https://simdl.github.io/overview/
+
+
+Producing flexible behaviours in simulated environments
+https://deepmind.com/blog/article/producing-flexible-behaviours-simulated-environments
+
+---
+
+# Retina GAN
+
+![bg height:80% right](img/cycle-perception-loss-retinagan.png)
+
+$$\mathcal{L}_\text{CycleGAN}(G, F, D_x, D_y) =
+
+\mathcal{L}_\text{GAN}(G, D_Y, X, Y) + \mathcal{L}_\text{GAN}(F, D_X, Y, X) + \lambda_\text{cycle}\mathcal{L}_\text{cycle}(G, F)$$
+
+---
+- RetinaGAN training process builds on top of CycleGAN [5]: an approach to learn a bidirectional mapping between unpaired datasets of images from two domains, $X$ and $Y$, with generators $G: X \rightarrow Y$ and $F: Y \rightarrow X$. 
+
+- These generators are trained alongside adversarial discriminators $D_x$, $D_y$
+​​ , which classify images to the correct domain, and with the cycle consistency loss capturing $F(G(x)) \approx x$, $G(F(y) \approx y$ for $x \in X$, $y \in Y$. 
+
+- We can summarize the training process with the CycleGAN loss:
+
+$$\mathcal{L}_\text{CycleGAN}(G, F, D_x, D_y) =
+
+\mathcal{L}_\text{GAN}(G, D_Y, X, Y) + \mathcal{L}_\text{GAN}(F, D_X, Y, X) + \lambda_\text{cycle}\mathcal{L}_\text{cycle}(G, F)$$
+
+---
+
+# References
+
+Anderson, C., Du, X., Vasudevan, R., & Johnson-Roberson, M. (2019). Stochastic Sampling Simulation for Pedestrian Trajectory Prediction. In 2019 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (pp. 4236–4243).
+
+A. Antonitsch, S. Musse, & L. Figueiredo (2020). Towards a Legion of Virtual Humans: Steering Behaviors and Organic Visualization. 2020 33rd SIBGRAPI Conference on Graphics, Patterns and Images (SIBGRAPI), 31-38
+
+Jeremy Castagno, Yu Yao and Ella Atkins. Realtime Rooftop Landing Site Identification and Selection in Urban City Simulation.
+
+Y. Chebotar et al., "Closing the Sim-to-Real Loop: Adapting Simulation Randomization with Real World Experience," 2019 International Conference on Robotics and Automation (ICRA), 2019, pp. 8973-8979, doi: 10.1109/ICRA.2019.8793789.
+
+Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
+J. Zhu, T. Park, P. Isola, A.A. Efros.

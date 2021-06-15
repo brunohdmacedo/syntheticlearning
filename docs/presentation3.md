@@ -12,7 +12,7 @@ paginate: true
 <!-- _paginate: false -->
 ![bg fit right:32%](img/visgraf-part.jpeg)
 
-# How to generate synthetic data and train a model with it? 
+# Do they live in a simulation? Training models for dynamic environment 
 
 ### Generation of synthetic data for machine learning
 
@@ -25,8 +25,8 @@ paginate: true
 # Generation of synthetic data for machine learning
 
 ### 1. ~~Why does synthetic data matter?~~
-### 2. **How to generate synthetic data and train a model with it**
-### 3. Do they live in a simulation? Training models for dynamic environments
+### 2. ~~How to generate synthetic data and train a model with it~~
+### 3. **Do they live in a simulation? Training models for dynamic environments**
 
 ---
 
@@ -49,19 +49,20 @@ paginate: true
 
 # Last week ...
 
-* There are many tools available to generate synthtetic datasets
-* It's important to have a strategy to generate good data
+* There are many **tools** available to generate synthetic datasets
+* It's important to have a **strategy** to generate good data
   * We can iterate dataset versions
-* Even a small team can generate large scale synthetic datasets
+* Even a small team can generate **large scale** synthetic datasets
   * There are already tutorials to help with this task
 
 ---
 
 # Today's agenda
 
-* Why learn on simulations?
-* How to generate these simulations?
-* Techniques to train on simulation
+* Why simulations?
+* Techniques to train models for dynamic environments
+* Challenges of simulations for machine learning
+* Tools to generate simulations and capture data
 
 ---
 <!-- _class: topic -->
@@ -71,113 +72,336 @@ paginate: true
 
 ---
 
+# Train agents for dynamic and complex environments
+
+![bg opacity:0.4](img/perseverance.jpeg)
+
+---
+# Tasks | Self-driving cars
+
+<style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+![h:480 center](img/driving-matrix-large.png)
+<!-- _footer: Johnson-Roberson et al, 2017 -->
+---
+# Tasks | Unmanned Aircraft Systems
+
+- Aerial photography 
+- Search and rescue 
+- Package delivery...
+
+![bg height:54% right:42%](img/rooftop-landing.jpeg)
+
+<!-- _footer: Jeremy Castagno, Yu Yao and Ella Atkins. Realtime Rooftop Landing Site Identification and Selection in Urban City Simulation. 2019 -->
+---
+
+# Tasks | Human like manipulation
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jwSbzNHGflM?start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+![bg right:40%](img/learning-dexterity-simulated-grid.png)
+
+<!-- _footer: OpenAI [Learning Dexterity](https://openai.com/blog/learning-dexterity/)-->
+
+---
+
+# Tasks | Perform alongside humans
+
+###### BMW Factory Digital Twin
+
+<div style="display: flex; justify-content: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6-DaWgg4zF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+---
+
+# Behavior | Digital Humans
+
+- How to train an agent to interact with humans?
+  * Simulating humans
+<br/>
+
+![center](img/stochastic-sampling-pedestrian.png)
+
+<!-- _footer: Anderson, C.; Du, X.; Vasudevan R.; & Johnson-Roberson, M. Stochastic Sampling Simulation for Pedestrian Trajectory Prediction. In 2019 IEEE/RSJ. -->
+
+---
+# Behavior | Crowds
+
+![h:450 center](img/towards-legion-digital-humans.jpeg)
+
+<!--_footer: A. Antonitsch, S. Musse, & L. Figueiredo (2020). [Towards a Legion of Virtual Humans](https://youtu.be/EK1JUbUrSKs): Steering Behaviors and Organic Visualization. 2020 33rd SIBGRAPI. -->
+
+---
+# Behavior | Crowds
+
+![height:480](img/crowds-labels.png)
+
+![bg right:10%](img/padding.png)
+
+<!-- _footer: Ernest Cheung, Tsan Kwong Wong, Aniket Bera, Xiaogang Wang & Dinesh Manocha. [LCrowdV: Generating Labeled Videos for Simulation-based Crowd Behavior](http://gamma.cs.unc.edu/LCrowdV/). ECCVW 2016 -->
+
+---
+# Computer Graphics | Stunts
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SIB760LoAGM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!-- _footer: DeepMotion: Physically Simulated AI Agents | Can They Replace Stuntmen? -->
+
+---
+# Computer Graphics | Animation
+
+![center](img/deep-dribble.gif)
+
+<!--_footer: [Deep Dribble](https://blog.deepmotion.com/2018/08/07/deepdribble-simulating-basketball-with-ai/): Simulating Basketball with AI-->
+
+---
+
+# New possibilities | Digital Humans...or dogs
+
+###### What if we perform tasks in the virtual world?
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FhXLi7NmbCk?start=2995" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+---
 # Why learn on simulations
 
-* Large diversity of training data
-* Faster than real time
+### We want to...
 
-
----
-
-Training robot for Mars?
-
-Caso da pesquisadora que simulava crowd?
-- films, games, urban engineering, behavioural science
-
-finding Landing sites for Unmanned Aircraft Systems (Castagno)
+- Train intelligent agents to perform task in the real world
+- Simulate behaviors according to the real world
 
 ---
 
-https://dl.acm.org/doi/abs/10.1145/3274247.3274510
+# Why learn on simulations
 
-<video poster="https://videodelivery.net/eyJraWQiOiI3YjgzNTg3NDZlNWJmNDM0MjY5YzEwZTYwMDg0ZjViYiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwNzQ3MjEzNDBmMGE5NGE0YWNhNDY5YjBlMTA4MDMyYyIsImtpZCI6IjdiODM1ODc0NmU1YmY0MzQyNjljMTBlNjAwODRmNWJiIiwiZXhwIjoxNjIzMTM4MzM1fQ.BD0WpUdzK6k_Z8DGTMx_qlbCLQiDLh8jShLV3xoMXjLqlLpK9byFSz1QFjnnxJLezbpMb8YWZMz_lln2LkR-V4y6oLKXMvuJkZWi7RkhQpLZUPoHQHQeuQpiTCiQlRPLUAdXZNT_7xp98B4PI_BfVLX7W9kMnJr69QFbz-pzraD8LxV1BUkHyxcRprVzCB2qRyRkbvIQzXpKKSXGhQ9QckQgtaKZ79nWkJS1AHCXZ-T_RCJB-Jn207FaT2R4pWkHCmJoyyIIzYBkVTliYs6QjV8v4V_Na7tHAmFt0vptfHK6PlkHeB3XCyeOQnQe8j2rvJnEBteHrA13P8NCCUn_9w/thumbnails/thumbnail.jpg?time=10.0s" class="css-14ogxpa" playsinline="" preload="metadata" muted="false" src="blob:https://embed.videodelivery.net/8f1b65c7-7c4f-4822-81cf-26757253cf8d"></video>
+### We also want to...
+
+* Get accurate and better results
+  * More data; dataset diversity...
+* Have a cheaper and easier process
+  * Automatic annotations
+* Train Faster
+  * "Time is an illusion": we can go faster than real-time
+* Train Safer
+  * Some scenarios are dangerous to experiment in real life 
+
+---
+<!-- _class: topic -->
+<!-- _paginate: false -->
+# Techniques
+
+---
+# Reinforcement Learning
+
+A model for the ideia of trial and error to train agents to make decisions in complex environments
+
+![bg fit right:52%](img/rl_diagram_openai.png)
+
+---
+# Reinforcement Learning
+
+- Markov Decision Process (MDP), 5-tuple, $\langle S, A, R, P, \rho_0 \rangle$, where
+  - S is the set of all valid **states**
+  - A is the set of all valid **actions**
+  - $R : S \times A \times S \to \mathbb{R}$ is the **reward function**, with $r_t = R(s_t, a_t, s_{t+1})$
+  - $P : S \times A \to \mathcal{P}(S)$ is the **transition probability function**, with $P(s'|s,a)$ being the probability of transitioning into state $s'$ if you start in state $s$ and take action $a$
+  - $\rho_0$ is the starting state distribution.
+
+---
+# Reinforcement Learning
+
+- **Policy**: rule used to decide what actions to take
+  - Deterministic: $a_t =\mu_{\theta}(s_t)$
+  - Stochastic: $a_t \sim \pi_{\theta}(\cdot | s_t)$
+
+* Deep Reinforcement Learning: $\theta$ parameters of the network
+* **Trajectory**: sequence of states and actions
+  * $\tau = (s_0, a_0, s_1, a_1, ...)$
+
+---
+# Reinforcement Learning
+- Reward or return
+$$r_t = R(s_t, a_t, s_{t+1})$$
+
+- Cumulative reward over a trajectory
+
+$$R(\tau) = \sum_{t=0}^{\infty} \gamma^t r_t$$ 
+or
+ $$R(\tau) = \sum_{t=0}^T r_t$$
 
 ---
 
-DeepMotion: Physically Simulated AI Agents | Can They Replace Stuntmen?
-https://youtu.be/SIB760LoAGM
+# Reinforcement Learning
+
+- The goal in RL is to **select a policy $\pi$ which maximizes expected return**
+
+$$\pi^* = \arg \max_{\pi} J(\pi)$$
 
 
-Basketball
-https://blog.deepmotion.com/2018/08/07/deepdribble-simulating-basketball-with-ai/
+$$J(\pi) = \int_{\tau} P(\tau|\pi) R(\tau) = \underset{\tau\sim \pi}{E}{R(\tau)}$$
 
----
-
-https://dl.acm.org/doi/10.1145/3072959.3083723
-
----
-
-https://deepmind.com/blog/article/producing-flexible-behaviours-simulated-environments
+$$P(\tau|\pi) = \rho_0 (s_0) \prod_{t=0}^{T-1} P(s_{t+1} | s_t, a_t) \pi(a_t | s_t)$$
 
 ---
 
-"Learning to drive in simulation offers a number of
-benefits, including the ability to vary appearance, lighting
-and weather conditions along with more structural varia-tions, such as curvature of the road and complexity of the
-surrounding obstructions. It is also possible to construct
-scenarios in simulation which are difficult (or dangerous) to
-replicate in the real world."
+# Reinforcement Learning
 
-- Learning to drive without labels
+<video autoplay="" src="https://d4mucfpksywv.cloudfront.net/openai-baselines-ppo/knocked-over-stand-up.mp4" loop="" controls="" style="display: block; margin-left: auto; margin-right: auto; margin-bottom:1.5em; width: 100%; max-width: 720px; max-height: 80vh;">
+</video>
 
 ---
 
-- Trajectory prediction
-- Crowd simulations
-- Training digital humans
-  - worker ergonomics, eficiency, collaboration with robots
-- Training robots to perform tasks in real life 
+# Imitation Learning
+
+#### IDEA: learn from an expert demonstration, rather than a carefully designed reward function.
+
+* Provides prior knowledgde to the system, rather than trial and error.
+
+![bg right:56% height:60%](img/pwil-imitation.gif)
+
+
+<!-- _footer: Robert Dadashi, Léonard Hussenot, Matthieu Geist, & Olivier Pietquin. [Primal Wasserstein Imitation Learning](https://ai.googleblog.com/2020/09/imitation-learning-in-low-data-regime.html). ICLR, 2021. -->
+---
+# Imitation Learning
+
+- Behavioral Cloning
+  * Directly replicating desired behaviour
+* Inverse Reinforcement Learning / Inverse Optimal Control
+  * Learning the hidden objectives of the desired behavior
 
 ---
+<!-- _class: topic -->
+<!-- _paginate: false -->
+# Challenges
+
+---
+
+# Challenges
+
+- We know the goal, we know some methods, but...
+* We still need to deal with the **Reality Gap**
+  * Now it's a dynamic environment (more parameters)
+  * We have physical constraints
+* Agents usually must **act in the real world**
+  * Sometimes models learn to "cheat" the simulator
+* **How to reduce the effort to generate coeherent simulations?**
+
+---
+# Challenges
+
+- Domain randomization might require carefull and task-specific selection of parameters
+
+![bg height:75% right:60%](img/simulation-too-wide.png)
+
+<!-- _footer: Chebotar, Y.; Handa, A.; Makoviychuk, V.; Macklin, M.; Issac, J.; Ratliff, N.; & Fox, D. [Closing the Sim-to-Real Loop](https://arxiv.org/abs/1810.05687): Adapting Simulation Randomization with Real World Experience". ICRA, 2019. -->
+
+
+---
+# Closing the Sim-to-Real Loop
+
+- Overly wide distribution might be disadvantageous
+  * Unrealistic scenarios
+  * Stress over physical components
+* Randomization might be biased by the expertise of the practitioner
+
+![bg fit right](img/cabinet-drawer-variance.png)
+
+<!-- _footer: Chebotar, Y.; Handa, A.; Makoviychuk, V.; Macklin, M.; Issac, J.; Ratliff, N.; & Fox, D. [Closing the Sim-to-Real Loop](https://arxiv.org/abs/1810.05687): Adapting Simulation Randomization with Real World Experience". ICRA, 2019. -->
+
+---
+
+# Closing the Sim-to-Real Loop
+
+- Start with some initial distribution of the simulation parameters
+* Learn in simulation
+* Use real world roll-outs of learned policies to gradually change the simulation randomization 
+
+![bg right fit](img/pipeline-simopt.png)
+
+---
+# Challenges
+
+- **Domain adaptation** might be useful for general tasks
+
+<!-- Simulating many years of robotic interaction is quite feasible with modern parallel computing, physics simulation, and rendering technology. Moreover, the resulting data comes with automatically-generated annotations, which is particularly important for tasks where success is hard to infer automatically. The challenge with simulated training is that even the best available simulators do not perfectly capture reality. Models trained purely on synthetic data fail to generalize to the real world, as there is a discrepancy between simulated and real environments, in terms of both visual and physical properties. In fact, the more we increase the fidelity of our simulations, the more effort we have to expend in order to build them, both in terms of implementing complex physical phenomena and in terms of creating the content (e.g., objects, backgrounds) to populate these simulations. This difficulty is compounded by the fact that powerful optimization methods based on deep learning are exceptionally proficient at exploiting simulator flaws: the more powerful the machine learning algorithm, the more likely it is to discover how to "cheat" the simulator to succeed in ways that are infeasible in the real world. The question then becomes: how can a robot utilize simulation to enable it to perform useful tasks in the real world -->
+
+---
+# Grasp GAN
+
+- Pixel-level domain adaptation
+- Pseudo-real images correct some sim-to-real gap
+- However, multi-pixel features or structures may be arbitrarily modified or removed
+
+![bg height:64% right:50%](img/grasp-gan1.png)
+
+<!-- _footer: Konstantinos Bousmalis, Alex Irpan, Paul Wohlhart, Yunfei Bai, Matthew Kelcey, Mrinal Kalakrishnan, Laura Downs, Julian Ibarz, Peter Pastor Sampedro, Kurt Konolige, Sergey Levine, & Vincent Vanhoucke (2018). Using Simulation and Domain Adaptation to Improve Efficiency of Deep Robotic Grasping. -->
+
+---
+
+# Retina GAN
+
+- Retina-GAN involves a CycleGAN 
+- Strong object semantic awareness through an object detection consistency loss 
+- Tests object detection feature understanding for robotics applications
+
+![bg height:80% right](img/cycle-perception-loss-retinagan.png)
+
+<!-- _footer: Daniel Ho, Kanishka Rao, Zhuo Xu, Eric Jang, Mohi Khansari, & Yunfei Bai. (2020). RetinaGAN: An Object-aware Approach to Sim-to-Real Transfer. -->
+
+---
+
+# Retina GAN
+
+![](img/retinagan-sim-grasp.gif)
+![bg right fit](img/retinagan-bar-result.png)
+
+---
+
+# Retina GAN
+
+- Different task and method
+- Training on data from three separate RetinaGAN models
+  - different random seeds and consistency loss weights
+
+![](img/retina-gan-open-door-sim-real.gif)
+
+![bg right fit](img/retina-opening-result.png)
+
+---
+<!-- _class: topic -->
+<!-- _paginate: false -->
 
 # Tools
 
-- Nvidia Isaac
-- http://gazebosim.org
-- https://carla.org
-- ML Agents (Unity)
+---
+# Tools
+
+- [Gazebo](http://gazebosim.org)
+- [CARLA](https://carla.org/)
+- [PyBullet](https://docs.google.com/document/d/10sXEhzFRSnvFcl3XxNGhnD4N2SedqwdAvK3dsihxVUA/edit#heading=h.2ye70wns7io3)
+- Nvidia [Isaac Sim](https://developer.nvidia.com/isaac-sim)
+- Unity [ML Agents](https://unity.com/pt/products/machine-learning-agents)
+* OpenAI [Spinning Up](https://spinningup.openai.com/en/latest/user/introduction.html)
 
 ---
+<!-- _class: topic -->
+<!-- _paginate: false -->
 
-
-Moreover, there are no guar-antees that the applied randomization would actually lead to a sensible real world policy as the design choices made in randomizing the parameters tend to be somewhat biased by the expertise of the practitioner. In this work, we apply a data-driven approach and use real world data to adapt sim-ulation randomization such that the behavior of the policies trained in simulation better matches their behavior in the real world. Therefore, starting with some initial distribution of the simulation parameters, we can perform learning in simulation and use real world roll-outs of learned policies to gradually change the simulation randomization such that the learned policies transfer better to the real world without requiring the exact replication of the real world scene in simulation.
-
-"Closing the Sim-to-Real Loop:
-Adapting Simulation Randomization with Real World Experience"
+# Conclusion
 
 ---
+# Conclusion 
 
-
-we aim at using a simulation
-engine as a form of parameterized model that can help us to
-embed prior knowledge about the world.
-
-
-In addition, our approach does
-not require estimating the reward in the real world, which
-might be challenging if some of the reward components
-can not be observed.
-
----
-
-
-
-unsupervised transfer of an end-to-end driv-ing model from a simulated environment to a real vehicle.
-
-This work goes beyond simple
-image-to-image translation by making the desired task of
-driving a differentiable component within a deep learning
-architecture.
-
-
-"Learning to Drive from Simulation without Real World Labels
-Alex"
-
----
-
-Domain adaptation seems to be an important technique for many of these works.
-- How to reduce the effort to generate coeherent simulations?
-  "Though our simulated city models rooftop obstacles accu-rately, future work is required to build rooftop models with a higher level of fidelity to cities such as Manhattan" – Realtime rooftop landing...
+- Simulations are important resources for training intelligent agents
+- Reinforcement Learning is a powerful technique for this task
+- Dynamic environments present new possibilities, but also new challenges
+- Simulation platforms keep evolving to support this paradigm - even adding differentiability!
 
 ---
 
@@ -198,65 +422,10 @@ Domain adaptation seems to be an important technique for many of these works.
 #### 3. ~~Do they live in a simulation? Training models for dynamic environments~~
 
 ---
-<!-- paginate: false -->
+<!-- _paginate: false -->
 <!-- _class: invert -->
 ![bg](img/visgraf-background.jpeg)
 
 # THANK YOU!
 
 [hallpaz@impa.br](mailto:hallpaz@impa.br)
-
----
-
-1. Why learn on simulations?
-2. How to generate these simulations?
-3. Techniques to train on simulation
-
-
-
- https://ai.googleblog.com/2017/10/closing-simulation-to-reality-gap-for.html
- "In this work, we compared the effect of using procedurally-generated and realistic objects from the ShapeNet model repository, and found that simply using random objects generated programmatically was not just sufficient for efficient experience transfer from simulation to reality, but also generalized better to the real world than using ShapeNet ones."
-
- "We further evaluate randomization as a way to provide generalization by separately evaluating the effect of using appearance randomization (randomly changing textures of different visual components of the virtual environment), and dynamics randomization (randomly changing object mass, and friction properties)"
-
-
-"There are also a number of domain-specific developments that improve syn-thetic data generation for specific fields. For example, Cheung et al. [110]
-present LCrowdV, a generation framework for crowd videos that combines a
-procedural simulation framework that concentrates of movements and human
-behaviour and a rendering framework for image/video generation, while An-derson et al. [19] develop a method for stochastic sampling-based simulation of
-pedestrian trajectories (see Section 2.3)." [Survey, p52]
-
-
-Closing the Sim-to-Real Loop: Adapting Simulation Randomization with Real World Experience
-https://arxiv.org/abs/1810.05687 
-
-
-Simulating many years of robotic interaction is quite feasible with modern parallel computing, physics simulation, and rendering technology. Moreover, the resulting data comes with automatically-generated annotations, which is particularly important for tasks where success is hard to infer automatically. The challenge with simulated training is that even the best available simulators do not perfectly capture reality. Models trained purely on synthetic data fail to generalize to the real world, as there is a discrepancy between simulated and real environments, in terms of both visual and physical properties. In fact, the more we increase the fidelity of our simulations, the more effort we have to expend in order to build them, both in terms of implementing complex physical phenomena and in terms of creating the content (e.g., objects, backgrounds) to populate these simulations. This difficulty is compounded by the fact that powerful optimization methods based on deep learning are exceptionally proficient at exploiting simulator flaws: the more powerful the machine learning algorithm, the more likely it is to discover how to "cheat" the simulator to succeed in ways that are infeasible in the real world. The question then becomes: how can a robot utilize simulation to enable it to perform useful tasks in the real world
-
-
-Autonomous vehicles
-
-# Time is an illusion
-
-- Simulations can run faster than real-time
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jwSbzNHGflM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-# Imitation Learning
-
-
-# Tools
-- [PyBullet](https://docs.google.com/document/d/10sXEhzFRSnvFcl3XxNGhnD4N2SedqwdAvK3dsihxVUA/edit#heading=h.2ye70wns7io3)
-
-
----
-
-
-drone applications include aerial photogra-phy, search and rescue, package delivery, and surveillance
-will benefit.
-
-Real-time confirmation that the rooftop is unoccupied and approach planning to the landing site are also necessary
-
----
-Jeremy Castagno, Yu Yao and Ella Atkins. Realtime Rooftop Landing Site Identification and Selection in Urban City Simulation.
