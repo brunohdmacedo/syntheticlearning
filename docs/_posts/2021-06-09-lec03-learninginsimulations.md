@@ -7,6 +7,8 @@ description: Nesta terceira e última apresentação, veremos que as aplicaçõe
 permalink: /aprendizado-em-simulacoes
 ---
 
+## [Please, check the slides here.](/syntheticlearning/presentation3.html)
+
 ### Será que vivemos em uma simulação?
 
 Simulações computacionais são recursos bastante usados e consolidados como forma de realizar estimativas e predições de processos difíceis e custosos de se investigar diretamente. No entanto, simulações podem ser combinadas com técnicas de aprendizado de máquina como aprendizado por reforço (*reinforcement learning*). Nesta terceira e última apresentação, veremos que as aplicações de dados sintéticos não se limitam a situações estáticas.
@@ -16,4 +18,4 @@ Um cômodo, uma fábrica e até mesmo uma cidade podem ser simulados virtualment
  Além de prover controle sobre os dados, as simulações são ambientes em que o treinamento de agentes inteligentes como robôs e veículos autônomos pode ser conduzido em segurança e em ritmo mais acelerado que o da vida real. Com este tópico promissor, fechamos este ciclo de palestras. Qual será a próxima fronteira?
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JBB6DmuidCA?start=786" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_gyrTS5ieJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
