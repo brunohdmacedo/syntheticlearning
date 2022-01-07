@@ -1,14 +1,13 @@
 ---
 layout: home
-title: Geração de Dados Sintéticos para Aprendizado de Máquina
-description: Seminário especial do Visgraf
+title: Synthetic Data Generation for Machine Learning
+description: Special seminar of the Visgraf Lab
 background: /assets/triangle-color-bg.jpg
 permalink: /
 ---
 
-O treinamento de modelos de aprendizado de máquinas para a resolução eficaz de tarefas geralmente requer uma quantidade muito grande de dados. Apesar de gerarmos milhões de terabytes de dados todos os dias, *não há dados suficientes* para atender com precisão a diversos problemas. Coletar e organizar grandes volumes de dados para cada tipo de aplicação já seria um desafio considerável para muitos indivíduos e organizações. No entanto, seja por questões técnicas ou éticas, para conduzir pesquisas e criar aplicações de inteligência artificial, é preciso ter cuidados adicionais na construção desses conjuntos de dados, tais como a categorização e balaceamento dos exemplos e o respeito à privacidade das pessoas.
+Training machine learning models often requires a very large amount of data. Although we generate millions of terabytes of data every day, *there isn't enough data* to accurately address many tasks. Collecting and organizing large volumes of data for each type of application is already a considerable challenge for many individuals and organizations. However, whether for technical or ethical reasons, to conduct research and create artificial intelligence applications, it is necessary to take extra care in the construction of these datasets, such as categorizing and balancing the samples and respecting people's privacy.
 
-
-O uso de dados sintéticos para treinamento dos modelos pode ser uma solução para contornar vários dos problemas relacionados construção de conjuntos de dados. Estudos recentes apontam para a possibilidade de uso de dados sintéticos para treinamento de modelos que possam apresentar um bom desempenho quando aplicado a dados reais. Nesta série de três seminários, apresentaremos vantagens e limitações deste método, em particular, nas áreas de visão computacional e computação gráfica; como dados sintéticos podem ser gerados em larga escala com as ferramentas de computação gráfica disponíveis hoje em dia; e como essa ideia se expande para o aprendizado de máquina dentro de simulações.
+Using synthetic data for model training can be a solution to overcome several of the problems related to constructing datasets. Recent studies point to the possibility of using synthetic data to train models that perform well when applied to real data. In this series of three seminars, we will present: advantages and limitations of this method, in particular, in the areas of computer vision and computer graphics; how synthetic data can be generated on a large scale using the computer graphics tools available today; and how this idea expands to machine learning within simulations.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TJkyhV_Mfcw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
