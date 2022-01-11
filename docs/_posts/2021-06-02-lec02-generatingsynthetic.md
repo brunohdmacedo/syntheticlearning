@@ -1,19 +1,18 @@
 ---
-title: Como gerar Dados Sintéticos e treinar um modelo com eles?
+title: Hot to Generate Synthetic Data and Train a Model with it?
 date: 2021-06-02 17:00:15 +0200
-categories: ["machine learning", "computação gráfica", "visão computacional", "dados sintéticos", "IMPA", "Unity"]
+categories: ["machine learning", "computer graphics", "computer vision", "synthetic data", "IMPA", "Unity"]
 background: /assets/triangle-pink.png
-description: Nesta apresentação, veremos como é possível realizar experimentos com a plataforma Unity para geração de dados sintéticos que podem ser utilizados no treinamento de modelos para tarefas como detecção e reconhecimento de objetos ou estimativa de pose.
-permalink: /gerando-dados-sinteticos
+description: In this presentation, we will discuss how to run experiments using the Unity platform to generate synthetic data to train models for tasks such as object detection and recognition or pose estimation.
+permalink: /generating-synthetic-data
 ---
 
 ## [Please, check the slides here.](/syntheticlearning/presentation2.html)
 
-### Qual o custo de se construir um conjuto de dados sintéticos? Que ferramentas podem ser utilizadas para este processo? Qual a complexidade de integrar ao treinamento dos modelos?
+### What is the cost of building a synthetic dataset? What tools can be used for this process? How complex is it to integrate synthetic data into model training?
 
-Essas são apenas algumas das perguntas que você pode estar se fazendo se deseja saber mais sobre a geração de dados sintéticos para machine learning. Em se tratando de computação visual, plataformas de mídia como as *engines* Unreal e Unity e, mais recentemente, o NVidia Omniverse tem sido utilizadas como suporte para pesquisas e desenvolvimento de aplicações. Neste tipo de ambiente, podemos automatizar a construção de cenas com alto grau de controle de propriedades como aparência e pose dos objetos de interesse, parâmetros das câmeras ou variação dos objetos de fundo. Além disso, o controle sobre o tipo de dado gerado – imagens RGB, mapas de profundidade, máscaras de segmentação, nuvem de pontos etc – e o controle sobre a quantidade de dados gerados, permitindo um balanceamento dos exemplos entre categorias, são características importantes .
+These are just some of the questions you might be asking yourself if you want to know more about generating synthetic data for machine learning. When it comes to visual computing, media platforms like Unreal and Unity *engines* and more recently NVidia Omniverse have been used to support application research and development. In this type of environment, we can automate the construction of scenes with a high degree of control over properties such as the appearance and the pose of objects of interest, camera parameters or variation of background objects. We can also control the type of data generated – RGB images, depth maps, segmentation masks, point clouds, etc – and the amount of data generated, allowing a balance of examples between categories.
 
-Nesta apresentação, veremos como é possível realizar experimentos com a plataforma Unity para geração de dados sintéticos que podem ser utilizados no treinamento de modelos para tarefas como detecção e reconhecimento de objetos ou estimativa de pose. A partir da discussão iniciada no [primeiro seminário](/por-que-dados-sinteticos), verificaremos como podemos obter imagens rotuladas automaticamente e também realizar operações de aleatorização de domínio (*domain randomization*).
-
+In this presentation, we'll see how you can experiment with the Unity platform to generate synthetic data that can be used to train models for tasks like object detection and recognition or pose estimation. From the discussion started in [first seminar](/why-synthetic-data), let's check how we can get automatically labeled images and also perform domain randomization operations.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kLwFyYdw9Cs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

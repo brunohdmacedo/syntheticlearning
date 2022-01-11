@@ -3,7 +3,7 @@ layout: home
 title: Geração de Dados Sintéticos para Aprendizado de Máquina
 description: Seminário especial do Visgraf
 background: /assets/triangle-color-bg.jpg
-permalink: /
+permalink: /pt-br
 ---
 
 O treinamento de modelos de aprendizado de máquinas para a resolução eficaz de tarefas geralmente requer uma quantidade muito grande de dados. Apesar de gerarmos milhões de terabytes de dados todos os dias, *não há dados suficientes* para atender com precisão a diversos problemas. Coletar e organizar grandes volumes de dados para cada tipo de aplicação já seria um desafio considerável para muitos indivíduos e organizações. No entanto, seja por questões técnicas ou éticas, para conduzir pesquisas e criar aplicações de inteligência artificial, é preciso ter cuidados adicionais na construção desses conjuntos de dados, tais como a categorização e balaceamento dos exemplos e o respeito à privacidade das pessoas.
