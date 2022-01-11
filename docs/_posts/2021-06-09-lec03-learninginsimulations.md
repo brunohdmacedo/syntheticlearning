@@ -1,21 +1,22 @@
 ---
-title: Eles vivem em uma simulação? Treinamento de modelos em ambientes sintéticos dinâmicos
+title: Do They Live in a Simulation? Training Models for Dynamic Environments
 date: 2021-06-09 17:00:15 +0200
-categories: ["machine learning", "computação gráfica", "visão computacional", "dados sintéticos", "IMPA", "Unity", "Simulações 3D"]
+categories: ["machine learning", "computer graphics", "computer vision", "synthetic data", "IMPA", "Unity", "3D simulations"]
 background: /assets/triangle-green.png
-description: Nesta terceira e última apresentação, veremos que as aplicações de dados sintéticos não se limitam a situações estáticas.
-permalink: /aprendizado-em-simulacoes
+description: In this third and final presentation, we will see that synthetic data applications are not limited to static situations.
+permalink: /learning-in-simulations
 ---
 
 ## [Please, check the slides here.](/syntheticlearning/presentation3.html)
 
-### Será que vivemos em uma simulação?
+### Do we live in a simulation?
 
-Simulações computacionais são recursos bastante usados e consolidados como forma de realizar estimativas e predições de processos difíceis e custosos de se investigar diretamente. No entanto, simulações podem ser combinadas com técnicas de aprendizado de máquina como aprendizado por reforço (*reinforcement learning*). Nesta terceira e última apresentação, veremos que as aplicações de dados sintéticos não se limitam a situações estáticas.
+Computer simulations are widely used and consolidated resources to make estimates and predictions of processes that are difficult or expensive to investigate directly. However, simulations can be combined with machine learning techniques such as reinforcement learning. In this third and final presentation, we will see that synthetic data applications are not limited to static situations.
 
-Um cômodo, uma fábrica e até mesmo uma cidade podem ser simulados virtualmente com o objetivo de se estabelecer alguma relação com os seus correspondentes físicos, um conceito conhecido como *Digital Twin*. A título de ilustração, em abril deste ano, durante a abertura da *GPU Technology Conference* (GTC), conferência anual da Nvidia, houve um trecho dedicado a comentar como a BMW, fabricante de veículos, vem simulando uma de suas fábricas para melhorar o planejamento do processo de produção e **treinar robôs para realizar tarefas**.
+A room, a factory and even a city can be simulated to establish some relationship with their physical counterparts, a concept known as *Digital Twin*. For instance, in April of this year, during the opening of the *GPU Technology Conference* (GTC), Nvidia's annual conference, there was an excerpt dedicated to commenting on how BMW, the vehicle manufacturer, has been simulating one of its factories to improve the planning of the its production and **train robots to perform tasks**.
 
- Além de prover controle sobre os dados, as simulações são ambientes em que o treinamento de agentes inteligentes como robôs e veículos autônomos pode ser conduzido em segurança e em ritmo mais acelerado que o da vida real. Com este tópico promissor, fechamos este ciclo de palestras. Qual será a próxima fronteira?
+In addition to providing control over data, simulations are environments in which the training of intelligent agents such as robots and autonomous vehicles can be conducted safely and at a faster pace than in real life. With this promising topic, we close this cycle of lectures. What will be the next frontier?
 
+###### Video is recorded in Portuguese
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_gyrTS5ieJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -1,6 +1,6 @@
 ---
 title: Why does synthetic data matter?
-categories: ["machine learning", "computação gráfica", "visão computacional", "dados sintéticos", "IMPA"]
+categories: ["machine learning", "computer graphics", "computer vision", "synthetic data", "IMPA"]
 date: 2021-05-26 17:00:15 +0200
 background: /assets/triangle-blue.png
 description: In this seminar, we will present some problems that motivate the use of synthetic data and discuss technical issues for training machine learning models based on recent work in the field.
